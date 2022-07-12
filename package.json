@@ -9,12 +9,28 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "chakra-ui": "^0.3.9",
+    "framer-motion": "^6.4.3",
     "next": "12.2.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-tsparticles": "^2.1.3",
+    "tailwindcss": "^3.1.6"
   },
   "devDependencies": {
     "eslint": "8.19.0",
     "eslint-config-next": "12.2.2"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "next.config.js",
+  "keywords": [
+    "Portfolio",
+    "NextJS",
+    "Framer-motion",
+    "chakra-ui",
+    "tsparticles",
+    "Web-Dev"
+  ],
+  "author": "Brandon Maurice (MizuDev)",
+  "license": "ISC"
 }
