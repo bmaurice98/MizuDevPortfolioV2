@@ -1,8 +1,13 @@
 import { Container } from '@chakra-ui/react'
+
 import React from 'react'
 
-export const Main = () => {
+const body = props.theme.body
+
+const Main = () => {
   return (
-    <Container className={`${props.theme.body} w-full h-full`}>Main</Container>
+        <Container className={`${body} w-full h-full`}>Main</Container>
   )
 }
+
+export default Main
