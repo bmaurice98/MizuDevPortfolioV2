@@ -1,3 +1,5 @@
+import { extendTheme } from "@chakra-ui/react";
+
 export const lightTheme = {
   body: "#77C9D4", //Feather blue
   text: "#000000", //Black
@@ -13,6 +15,15 @@ export const darkTheme = {
   bodyRgba: "1,82,73",
   textRgba: "165, 165, 175",
 };
+
+export const theme = extendTheme({
+  colors: {
+    feather: "#77C9D4",
+    forest_Green: "#015249",
+    sleek_Gray: "#A5A5Af",
+    marine: "#57BC90",
+  },
+});
 
 /*
 Feather: #77C9D4
