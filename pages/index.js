@@ -1,11 +1,10 @@
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
-import { About, Blog, Main, Project, Skills } from "../components";
+import { Main } from "../components";
+
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>MizuDev Personal</title>
         <meta name="description" content="My Web Developer Portfolio" />
@@ -19,6 +18,6 @@ export default function Home() {
       </Head>
 
       <Main />
-    </div>
+    </>
   );
 }

@@ -1,4 +1,4 @@
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme } from "@chakra-ui/react"
 
 export const lightTheme = {
   body: "#77C9D4", //Feather blue

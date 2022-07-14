@@ -12,6 +12,7 @@ Soon to be displayed at [Devmizu.tech]
 - React-tsparticales
 - GraphQl
   - Graphcms
+- ReactIcons
 
 ## Features
 
