@@ -6,13 +6,13 @@ import { LogoComponent } from "./LogoComponent";
 import { Socials } from "./Socials";
 
 const MainContainer = styled.div`
-  background: ${props => props.theme.body};
+  background: ${(props) => props.theme.body};
   width: 100vw;
   height: 100vh;
   overflow: hidden;
 
   position: relative;
- 
+
   h2,
   h3,
   h4,
@@ -23,6 +23,15 @@ const MainContainer = styled.div`
   }
 `;
 
+const Contact = styled.div`
+  color: ${(props) => props.theme.text};
+  position: absolute;
+  top: 2rem;
+  right: calc(1rem + 2vw);
+  text-decoration: none;
+  z-index: 3;
+`;
+
 const Main = () => {
   return (
     <MainContainer>
@@ -30,6 +39,11 @@ const Main = () => {
         <HomeButton />
         <LogoComponent />
         <Socials />
+        <Contact>
+          <a target={"_blank"} href={"mailto:devmizu@gmail.com"}>
+            <h3>Contact me</h3>
+          </a>
+        </Contact>
       </Container>
     </MainContainer>
   );
