@@ -29,6 +29,29 @@ const Contact = styled.div`
   top: 2rem;
   right: calc(1rem + 2vw);
   text-decoration: none;
+  font-size: larger;
+  z-index: 3;
+`;
+
+const Blog = styled.div`
+  color: ${(props) => props.theme.text};
+  position: absolute;
+  top: 50%;
+  right: calc(1rem + 2vw);
+  text-decoration: none;
+  transform: rotate(90deg) translate(-50%, -50%);
+  font-size: larger;
+  z-index: 3;
+`;
+
+const Projects = styled.div`
+  color: ${(props) => props.theme.text};
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  text-decoration: none;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  font-size: larger;
   z-index: 3;
 `;
 
@@ -40,10 +63,20 @@ const Main = () => {
         <LogoComponent />
         <Socials />
         <Contact>
-          <a target={"_blank"} href={"mailto:devmizu@gmail.com"}>
-            <h3>Contact me</h3>
+          <a href={"mailto:devmizu@gmail.com"}>
+            <h3>Contact me?</h3>
           </a>
         </Contact>
+        <Blog>
+          <a href={"/Blog"}>
+            <h3>Blog</h3>
+          </a>
+        </Blog>
+        <Projects>
+          <a href={"/Project"}>
+            <h3>Projects</h3>
+          </a>
+        </Projects>
       </Container>
     </MainContainer>
   );

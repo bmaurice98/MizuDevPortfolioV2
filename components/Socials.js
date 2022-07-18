@@ -5,23 +5,25 @@ import { SiLinkedin } from "@react-icons/all-files/si/SiLinkedin";
 import { SiLeetcode } from "@react-icons/all-files/si/SiLeetcode";
 import { SiSpotify } from "@react-icons/all-files/si/SiSpotify";
 import { SiTwitch } from "@react-icons/all-files/si/SiTwitch";
-<<<<<<< HEAD
 import styled from 'styled-components';
 
 const Icons = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-position: fixed;
-bottom: 0;
-left: 2rem;
-color: ${props => props.theme.text};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 2rem;
+  color: ${(props) => props.theme.text};
 
-z-index: 3;
-&>*:not(:last-child){
-  margin: 0.2rem 0;
-}
-`
+  z-index: 3;
+  & > a:not(:last-child) {
+    margin: 0.2rem 0;
+  }
+  & > *:hover {
+    color: #A5A5Af;
+  }
+`;
 
 const Line = styled.span`
 width: 2px;
@@ -54,47 +56,5 @@ export const Socials = () => {
         <Line />
       </Icons>
     </>
-=======
-import styled, { css } from "styled-components";
-
-const Icon = styled.div`
-  transform: translate(0%);
-  transition: 0.3s ease-out;
-
-  ${(props) =>
-    props.animated &&
-    css`
-      &:hover {
-        position: fixed;
-        transform: translate(0%, -30%);
-        transition: 0.3s ease-out;
-      }
-    `}
-`;
-
-export const Socials = () => {
-  return (
-    <div>
-      <div>
-        <Icon animated>
-          <Link href={"https://github.com/bmaurice98"}>
-            <DiGithubAlt />
-          </Link>
-        </Icon>
-        <Link href={"https://www.linkedin.com/in/brandon-maurice-a77190187/"}>
-          <SiLinkedin />
-        </Link>
-        <Link href={"https://leetcode.com/MizuPiku/"}>
-          <SiLeetcode />
-        </Link>
-        <Link href={"https://leetcode.com/MizuPiku/"}>
-          <SiTwitch />
-        </Link>
-        <Link href={"https://leetcode.com/MizuPiku/"}>
-          <SiSpotify />
-        </Link>
-      </div>
-    </div>
->>>>>>> cbe253d7a2255daf5f21bf315dc55bfbe65fd792
   );
 };
