@@ -51,7 +51,8 @@ const Blog = styled.div`
 `;
 
 const Projects = styled.div`
-  color: ${(props) => props.theme.text};
+  color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
+  transition: ease-in-out 1s;
   position: absolute;
   top: 50%;
   left: calc(1rem + 2vw);
@@ -72,8 +73,13 @@ const BottomBar = styled.div`
 `;
 
 const About = styled.div`
-  color: ${(props) => props.theme.text};
+  color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
+  transition: ease-in-out 1s;
   z-index: 3;
+
+  & >a:hover {
+    color: "#57BC90";
+  }
 `;
 
 const Skills = styled.div`
@@ -120,7 +126,7 @@ const DarkDiv = styled.div`
   right: 50%;
   width: ${(props) => (props.click ? "50%" : "0%")};
   height: ${(props) => (props.click ? "100%" : "0%")};
-  z-index: 3;
+  z-index: 0;
   transition: height 0.5s ease, width 1s ease 0.5s;
 `;
 
@@ -136,11 +142,11 @@ const Main = () => {
     <MainContainer>
       <Container className="p-8">
         <HomeButton />
-        <LogoComponent />
-        <Socials />
-        <DarkDiv click={click}/>
+        <LogoComponent theme={click ? 'dark' : 'light'}/>
+        <Socials theme={click ? 'dark' : 'light'} />
+        <DarkDiv click={click} />
         <Center click={click}>
-          <Spirals width={click ? 120 : 200} onClick={()=> handleClick()} />
+          <Spirals width={click ? 120 : 200} onClick={() => handleClick()} />
           <span></span>
         </Center>
         <Contact>
@@ -153,13 +159,13 @@ const Main = () => {
             <a>Blog</a>
           </Link>
         </Blog>
-        <Projects>
+        <Projects click={click}>
           <Link href={"/Projects"} passHref>
             <a>Projects</a>
           </Link>
         </Projects>
         <BottomBar>
-          <About>
+          <About click={click}>
             <Link href={"/About"} passHref>
               <a>About</a>
             </Link>

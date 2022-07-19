@@ -1,11 +1,11 @@
 import React from "react";
-import Link from "next/link";
 import { SiGithub } from "@react-icons/all-files/si/SiGithub";
 import { SiLinkedin } from "@react-icons/all-files/si/SiLinkedin";
 import { SiLeetcode } from "@react-icons/all-files/si/SiLeetcode";
 import { SiSpotify } from "@react-icons/all-files/si/SiSpotify";
 import { SiTwitch } from "@react-icons/all-files/si/SiTwitch";
 import styled from "styled-components";
+import { darkTheme } from "../components/Themes";
 
 const Icons = styled.div`
   display: flex;
@@ -14,7 +14,8 @@ const Icons = styled.div`
   position: fixed;
   bottom: 0;
   left: 2rem;
-  color: ${(props) => props.theme.text};
+  color: ${(props) => (props.color === "dark" ? "#77C9D4" : '#000')};
+  transition: ease 2s;
 
   z-index: 3;
   & > a:not(:last-child) {
@@ -29,15 +30,16 @@ const Line = styled.span`
   width: 2px;
   height: 6rem;
   margin-top: 0.5em;
-  background-color: ${(props) => props.theme.text};
+  background-color: ${(props) => (props.color === "dark" ? "#77C9D4" : '#000')};
+  transition: ease 2s;
 `;
 
 let SOCIAL_SIZE = "1.5rem";
 
-export const Socials = () => {
+export const Socials = (props) => {
   return (
     <>
-      <Icons>
+      <Icons color={props.theme}>
         <a
           href={"https://github.com/bmaurice98"}
           target={"_blank"}
@@ -73,7 +75,7 @@ export const Socials = () => {
         >
           <SiSpotify fontSize={SOCIAL_SIZE} />
         </a>
-        <Line />
+        <Line color={props.theme} />
       </Icons>
     </>
   );

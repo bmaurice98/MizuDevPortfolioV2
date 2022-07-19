@@ -10,7 +10,7 @@ export const lightTheme = {
 
 export const darkTheme = {
   body: "#015249", //Forest Green
-  text: "#A5A5Af", //Sleek gray
+  text: "#77C9D4", //Feather blue
   fontFamily: "'Source Sans Pro', sans-serif",
   bodyRgba: "1,82,73",
   textRgba: "165, 165, 175",
