@@ -1,10 +1,11 @@
 import React from "react";
-import styled from "styled-components";
+import Link from "next/link";
+import styled, { keyframes } from "styled-components";
 import { Container } from "@chakra-ui/react";
 import { HomeButton } from "./HomeButton";
 import { LogoComponent } from "./LogoComponent";
 import { Socials } from "./Socials";
-import Link from "next/link";
+import { SiGithub } from "@react-icons/all-files/si/SiGithub";
 
 const MainContainer = styled.div`
   background: ${(props) => props.theme.body};
@@ -23,7 +24,7 @@ const MainContainer = styled.div`
     font-weight: 500;
   }
 
-  a{
+  a {
     font-weight: 700;
   }
 `;
@@ -80,6 +81,35 @@ const Skills = styled.div`
   z-index: 3;
 `;
 
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+const Center = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  background-color: transparent;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & > :first-child {
+    animation: ${rotate} infinite 60s linear;
+  }
+  & > :last-child {
+    padding-top: 1rem;
+  }
+`;
+
 const Main = () => {
   return (
     <MainContainer>
@@ -87,6 +117,10 @@ const Main = () => {
         <HomeButton />
         <LogoComponent />
         <Socials />
+        <Center>
+          <SiGithub fontSize={300} />
+          <span>LOGO</span>
+        </Center>
         <Contact>
           <a href={"mailto:devmizu@gmail.com"}>
             <h3>Contact me?</h3>
