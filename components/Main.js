@@ -5,7 +5,8 @@ import { Container } from "@chakra-ui/react";
 import { HomeButton } from "./HomeButton";
 import { LogoComponent } from "./LogoComponent";
 import { Socials } from "./Socials";
-import { Spirals } from './svgs'
+import { Spirals } from "./svgs";
+import { motion } from "framer-motion";
 import Intro from "./intro";
 
 const MainContainer = styled.div`
@@ -25,12 +26,13 @@ const MainContainer = styled.div`
     font-weight: 500;
   }
 
-  a {
+  a > * {
     font-weight: 700;
+    font-size: larger;
   }
 `;
 
-const Contact = styled.div`
+const Contact = styled(motion.div)`
   color: ${(props) => props.theme.text};
   position: absolute;
   top: 2rem;
@@ -38,6 +40,9 @@ const Contact = styled.div`
   text-decoration: none;
   font-size: larger;
   z-index: 3;
+  & > *:hover {
+    color: #015249;
+  }
 `;
 
 const Blog = styled.div`
@@ -49,6 +54,9 @@ const Blog = styled.div`
   transform: rotate(90deg) translate(-50%, -50%);
   font-size: larger;
   z-index: 3;
+  & > *:hover {
+    color: #015249;
+  }
 `;
 
 const Projects = styled.div`
@@ -90,6 +98,9 @@ const About = styled.div`
 const Skills = styled.div`
   color: ${(props) => props.theme.text};
   z-index: 3;
+  & > *:hover {
+    color: #015249;
+  }
 `;
 
 const rotate = keyframes`
@@ -116,7 +127,8 @@ const Center = styled.div`
   transition: all 1s ease;
 
   & > :first-child {
-    animation: ${rotate} infinite ${props => props.click ? '10s' : '30s'} linear;
+    animation: ${rotate} infinite ${(props) => (props.click ? "10s" : "30s")}
+      linear;
   }
   & > :last-child {
     padding-top: 1rem;
@@ -136,19 +148,18 @@ const DarkDiv = styled.div`
 `;
 
 const Main = () => {
-
-  const [click, setClick] = useState(false)
+  const [click, setClick] = useState(false);
 
   const handleClick = () => {
-    setClick(!click)
-  }
-  
+    setClick(!click);
+  };
+
   return (
     <MainContainer>
       <Container className="p-8">
         <HomeButton />
-        <LogoComponent theme={click ? 'dark' : 'light'}/>
-        <Socials theme={click ? 'dark' : 'light'} />
+        <LogoComponent theme={click ? "dark" : "light"} />
+        <Socials theme={click ? "dark" : "light"} />
         <DarkDiv click={click} />
         <Center click={click}>
           <Spirals width={click ? 120 : 200} onClick={() => handleClick()} />
@@ -156,28 +167,52 @@ const Main = () => {
         </Center>
         <Contact>
           <a href={"mailto:devmizu@gmail.com"}>
-            <h3>Contact me?</h3>
+            <motion.h3 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
+              Contact me?
+            </motion.h3>
           </a>
         </Contact>
         <Blog>
           <Link href={"/Blog"}>
-            <a>Blog</a>
+            <a>
+              <motion.h3 whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.8 }}>
+                Blog
+              </motion.h3>
+            </a>
           </Link>
         </Blog>
         <Projects click={click}>
           <Link href={"/Projects"} passHref>
-            <a>Projects</a>
+            <a>
+              <motion.h3 whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.8 }}>
+                Projects
+              </motion.h3>
+            </a>
           </Link>
         </Projects>
         <BottomBar>
           <About click={click}>
             <Link href={"/About"} passHref>
-              <a>About</a>
+              <a>
+                <motion.h3
+                  whileHover={{ scale: 1.3 }}
+                  whileTap={{ scale: 0.8 }}
+                >
+                  About
+                </motion.h3>
+              </a>
             </Link>
           </About>
           <Skills>
             <Link href={"/Skills"} passHref>
-              <a>Skills</a>
+              <a>
+                <motion.h3
+                  whileHover={{ scale: 1.3 }}
+                  whileTap={{ scale: 0.8 }}
+                >
+                  Skills
+                </motion.h3>
+              </a>
             </Link>
           </Skills>
         </BottomBar>

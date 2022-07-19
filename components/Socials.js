@@ -35,7 +35,7 @@ const Line = styled.span`
   transition: ease 1s;
 `;
 
-let SOCIAL_SIZE = "1.5rem";
+let SOCIAL_SIZE = "1.8rem";
 
 export const Socials = (props) => {
   return (
