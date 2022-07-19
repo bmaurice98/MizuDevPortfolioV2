@@ -6,6 +6,7 @@ import { HomeButton } from "./HomeButton";
 import { LogoComponent } from "./LogoComponent";
 import { Socials } from "./Socials";
 import { Spirals } from './svgs'
+import Intro from "./intro";
 
 const MainContainer = styled.div`
   background: ${(props) => props.theme.body};
@@ -60,6 +61,10 @@ const Projects = styled.div`
   transform: translate(-50%, -50%) rotate(-90deg);
   font-size: larger;
   z-index: 3;
+
+  & > *:hover {
+    color: #015249;
+  }
 `;
 
 const BottomBar = styled.div`
@@ -77,8 +82,8 @@ const About = styled.div`
   transition: ease-in-out 1s;
   z-index: 3;
 
-  & >a:hover {
-    color: "#57BC90";
+  & > *:hover {
+    color: #015249;
   }
 `;
 
@@ -177,6 +182,7 @@ const Main = () => {
           </Skills>
         </BottomBar>
       </Container>
+      {click ? <Intro click={click} /> : null}
     </MainContainer>
   );
 };

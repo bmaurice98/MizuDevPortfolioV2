@@ -14,8 +14,8 @@ const Icons = styled.div`
   position: fixed;
   bottom: 0;
   left: 2rem;
-  color: ${(props) => (props.color === "dark" ? "#77C9D4" : '#000')};
-  transition: ease 2s;
+  color: ${(props) => (props.color === "dark" ? darkTheme.text : "#000")};
+  transition: ease 1s;
 
   z-index: 3;
   & > a:not(:last-child) {
@@ -30,8 +30,9 @@ const Line = styled.span`
   width: 2px;
   height: 6rem;
   margin-top: 0.5em;
-  background-color: ${(props) => (props.color === "dark" ? "#77C9D4" : '#000')};
-  transition: ease 2s;
+  background-color: ${(props) =>
+    props.color === "dark" ? darkTheme.text : "#000"};
+  transition: ease 1s;
 `;
 
 let SOCIAL_SIZE = "1.5rem";
