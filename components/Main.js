@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import styled, { keyframes } from "styled-components";
 import { Container } from "@chakra-ui/react";
 import { HomeButton } from "./HomeButton";
 import { LogoComponent } from "./LogoComponent";
 import { Socials } from "./Socials";
-import { SiGithub } from "@react-icons/all-files/si/SiGithub";
+import { Spirals } from './svgs'
 
 const MainContainer = styled.div`
   background: ${(props) => props.theme.body};
@@ -93,33 +93,55 @@ const rotate = keyframes`
 
 const Center = styled.div`
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: ${(props) => (props.click ? "85%" : "50%")};
+  left: ${(props) => (props.click ? "92%" : "50%")};
   transform: translate(-50%, -50%);
   display: flex;
+  cursor: pointer;
   background-color: transparent;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: all 1s ease;
 
   & > :first-child {
-    animation: ${rotate} infinite 60s linear;
+    animation: ${rotate} infinite ${props => props.click ? '10s' : '30s'} linear;
   }
   & > :last-child {
     padding-top: 1rem;
   }
 `;
 
+const DarkDiv = styled.div`
+  position: absolute;
+  top: 0;
+  background-color: black;
+  bottom: 0;
+  right: 50%;
+  width: ${(props) => (props.click ? "50%" : "0%")};
+  height: ${(props) => (props.click ? "100%" : "0%")};
+  z-index: 3;
+  transition: height 0.5s ease, width 1s ease 0.5s;
+`;
+
 const Main = () => {
+
+  const [click, setClick] = useState(false)
+
+  const handleClick = () => {
+    setClick(!click)
+  }
+  
   return (
     <MainContainer>
       <Container className="p-8">
         <HomeButton />
         <LogoComponent />
         <Socials />
-        <Center>
-          <SiGithub fontSize={300} />
-          <span>LOGO</span>
+        <DarkDiv click={click}/>
+        <Center click={click}>
+          <Spirals width={click ? 120 : 200} onClick={()=> handleClick()} />
+          <span></span>
         </Center>
         <Contact>
           <a href={"mailto:devmizu@gmail.com"}>
