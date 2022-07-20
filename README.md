@@ -20,7 +20,7 @@ Soon to be displayed at [Devmizu.tech]
   - Mobile Support
   - Tablet Support
 - Multi-Page Layout
-- Animted Content
+- Animated Content
 - Dev Blog
 - Book Library
 - Spotify
