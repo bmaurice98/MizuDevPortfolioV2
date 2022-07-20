@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import { HomeButton } from "../../components/HomeButton";
 import { LogoComponent } from "../../components/LogoComponent";
 import { Socials } from "../../components/Socials";

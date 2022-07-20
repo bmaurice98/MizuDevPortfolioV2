@@ -1,3 +1,4 @@
+import { styled } from "@chakra-ui/react";
 import React from "react";
 import { HomeButton } from "../../components/HomeButton";
 import { LogoComponent } from "../../components/LogoComponent";
