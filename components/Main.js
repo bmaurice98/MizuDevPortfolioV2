@@ -166,9 +166,13 @@ const Main = () => {
           <span></span>
         </Center>
         <Contact>
-          <a href={"mailto:devmizu@gmail.com"}>
+          <a
+            href={"mailto:devmizu@gmail.com"}
+            target={"_blank"}
+            rel="noreferrer"
+          >
             <motion.h3 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
-              Contact me?
+              Contact me
             </motion.h3>
           </a>
         </Contact>
