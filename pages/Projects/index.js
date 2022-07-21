@@ -7,6 +7,20 @@ import { Socials } from "../../components/Socials";
 const MainContainer = styled.div`
   width: 100vw;
   height: 100vh;
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Karla", sans-serif;
+    font-weight: 500;
+  }
+
+  a > * {
+    font-weight: 700;
+    font-size: larger;
+  }
 `;
 
 const Container = styled.div`

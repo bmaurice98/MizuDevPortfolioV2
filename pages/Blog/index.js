@@ -1,18 +1,23 @@
+import Head from "next/head";
 import React from "react";
 import styled from "styled-components";
 import { HomeButton } from "../../components/HomeButton";
 import { LogoComponent } from "../../components/LogoComponent";
 import { Socials } from "../../components/Socials";
+import BlogComponent from "./BlogComponent";
 
 const MainContainer = styled.div`
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   width: 100vw;
-  height: 100vh;
 `;
 
 const Container = styled.div`
-  background-color: ${(props) => `rgba(${props.theme.bodyRgba}, 1)`};
+  background-color: ${(props) => `rgba(${props.theme.bodyRgba}, 0.8)`};
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: relative;
   padding-bottom: 5rem;
 `;
@@ -32,16 +37,28 @@ const Grid = styled.div`
 
 const Blog = () => {
   return (
-    <MainContainer>
-      <Container>
-        <HomeButton />
-        <LogoComponent />
-        <Socials />
-      </Container>
-      <Center>
-        <Grid></Grid>
-      </Center>
-    </MainContainer>
+    <>
+      <Head>
+        <title>DevMizu Blog</title>
+        <meta
+          name="description"
+          content="Conglomerations of my thoughts and interests, expressed throughout blogs"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <MainContainer>
+        <Container>
+          <HomeButton />
+          <LogoComponent />
+          <Socials />
+          <Center>
+            <Grid>
+              <BlogComponent />
+            </Grid>
+          </Center>
+        </Container>
+      </MainContainer>
+    </>
   );
 };
 

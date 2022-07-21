@@ -1,5 +1,5 @@
 import { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme, theme } from "../components/Themes";
+import { lightTheme, theme } from "../components/Themes";
 import { ChakraProvider } from "@chakra-ui/react";
 import "../styles/globals.css";
 
