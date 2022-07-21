@@ -2,6 +2,7 @@ import React from "react";
 import PostCard from "./PostCard";
 import Categories from "./Categories";
 import PostWidget from "./PostWidget";
+import { getPosts } from "../../services";
 
 const BlogComponent = ({ posts }) => {
   return (
@@ -9,8 +10,8 @@ const BlogComponent = ({ posts }) => {
       <div className="container min-h-full mx-auto px-10 mb-3 lg:mt-10 mt-[5rem]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-8 col-span-1">
-            {posts.length > 0 ? (
-              posts.map((post) => (
+            {posts ? (
+              posts?.map((post) => (
                 <PostCard post={post.node} key={post.node.slug} />
               ))
             ) : (
@@ -32,3 +33,12 @@ const BlogComponent = ({ posts }) => {
 };
 
 export default BlogComponent;
+
+export async function getStaticProps() {
+  const posts = (await getPosts()) || null;
+
+  return {
+    props: { posts },
+    revalidate: 6000,
+  };
+}
