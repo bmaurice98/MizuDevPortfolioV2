@@ -1,12 +1,15 @@
-import React from 'react'
+import React from "react";
+import PostCard from "./PostCard";
+import Categories from "./Categories";
+import PostWidget from "./PostWidget";
 
-const BlogComponent = ({posts}) => {
+const BlogComponent = ({ posts }) => {
   return (
     <>
       <div className="container min-h-full mx-auto px-10 mb-3 lg:mt-10 mt-[5rem]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-8 col-span-1">
-            {posts? (
+            {posts.length > 0 ? (
               posts.map((post) => (
                 <PostCard post={post.node} key={post.node.slug} />
               ))
@@ -18,12 +21,14 @@ const BlogComponent = ({posts}) => {
           </div>
           <div className="lg:col-span-4 col-span-1">
             <div className="lg:sticky relative lg:top-[4.5rem]">
+              <PostWidget />
+              <Categories />
             </div>
           </div>
         </div>
       </div>
     </>
   );
-}
+};
 
 export default BlogComponent;

@@ -22,13 +22,8 @@ const MainContainer = styled.div`
   h4,
   h5,
   h6 {
-    font-family: "Karla", sans-serif;
+    font-family: "Pacifico", sans-serif;
     font-weight: 500;
-  }
-
-  a > * {
-    font-weight: 700;
-    font-size: larger;
   }
 `;
 
@@ -83,6 +78,7 @@ const BottomBar = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  font-size: larger;
 `;
 
 const About = styled.div`
