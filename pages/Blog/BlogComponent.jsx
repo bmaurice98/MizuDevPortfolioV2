@@ -1,44 +1,83 @@
+import Link from "next/link";
 import React from "react";
-import PostCard from "./PostCard";
+import styled from "styled-components";
 import Categories from "./Categories";
-import PostWidget from "./PostWidget";
-import { getPosts } from "../../services";
+import PostCard from "./PostCard";
+import moment from "moment";
 
-const BlogComponent = ({ posts }) => {
+const Box = styled.div`
+  position: relative;
+  width: calc(10rem + 15vw);
+  text-decoration: none;
+  height: 20rem;
+  padding: 1rem;
+  color: ${(props) => props.theme.text};
+  border: 2px solid;
+  ${(props) => props.theme.text}
+  backdrop-filter: blur(2px);
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.4);
+  text-align: center;
+  cursor: pointer;
+
+  z-index: 5;
+
+  &:hover {
+    color: #015249;
+    background-color: ${(props) => props.theme.text};
+    transition: all ease-in-out 0.3s;
+  }
+`;
+
+const Image = styled.div`
+  background-image: ${(props) => `url(${props.img})`};
+  width: 100%;
+  height: 60%;
+  background-size: cover;
+  border: 1px solid transparent;
+  background-position: center center;
+  ${Box}:hover & {
+    border: 1px solid ${(props) => props.theme.body};
+  }
+`;
+
+const Title = styled.h3`
+  color: inherit;
+  padding: 0%.5rem 0;
+  padding-top: 1rem;
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  border-bottom: 1px solid ${(props) => props.theme.text};
+  text-align: center;
+  cursor: pointer;
+`;
+
+const Tags = styled.div`
+  padding: 0.5rem 0;
+`;
+
+const Date = styled.span`
+  padding: 0.5rem 0;
+`;
+
+const BlogComponent = ({ post }) => {
+  if (!post) {
+    return null;
+  }
+
+  const { title, author, categories, excerpt, slug, featuredImage, createdAt } =
+    post;
   return (
-    <>
-      <div className="container min-h-full mx-auto px-10 mb-3 lg:mt-10 mt-[5rem]">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-8 col-span-1">
-            {posts ? (
-              posts?.map((post) => (
-                <PostCard post={post.node} key={post.node.slug} />
-              ))
-            ) : (
-              <h2 className="text-center items-center justify-center text-3xl">
-                No Posts created as of yet
-              </h2>
-            )}
-          </div>
-          <div className="lg:col-span-4 col-span-1">
-            <div className="lg:sticky relative lg:top-[4.5rem]">
-              <PostWidget />
-              <Categories />
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+    <Link href={"Post/" + slug}>
+      <Box>
+        <Image img={featuredImage.url} alt="" />
+        <Title>{title}</Title>
+        <Tags>
+          <Categories />
+        </Tags>
+        <Date>{moment(post.createdAt).format("MMM DD, YYYY")}</Date>
+      </Box>
+    </Link>
   );
 };
 
 export default BlogComponent;
-
-export async function getStaticProps() {
-  const posts = (await getPosts()) || null;
-
-  return {
-    props: { posts },
-    revalidate: 6000,
-  };
-}

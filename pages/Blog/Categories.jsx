@@ -1,6 +1,20 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { getCategories } from "../../services";
+import styled from "styled-components";
+
+const Container = styled.div`
+  padding: 0.2rem 0.2rem;
+  margin: 0 auto;
+  border-radius: 10%;
+  background-color: ${(props) => props.theme.body};
+  cursor: pointer;
+`;
+
+const MainContainer = styled.div`
+  display: inline-flex;
+  width: 100%;
+`;
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
@@ -11,30 +25,31 @@ const Categories = () => {
     const controller = new AbortController();
     const signal = controller.signal;
     // try to communicate with server API
-    getCategories().then((newCategories) => setCategories(newCategories)).catch((err) => {
-      if (err.name === 'AbortError') {
-        console.log('Successfully aborted');
-      } else {
-        setError(err);
-      }
-    });
+    getCategories()
+      .then((newCategories) => setCategories(newCategories))
+      .catch((err) => {
+        if (err.name === "AbortError") {
+          console.log("Successfully aborted");
+        } else {
+          setError(err);
+        }
+      });
 
     return () => {
       controller.abort();
-    }
+    };
   }, []);
 
   return (
-    <div className="transition duration-500 dark:bg-gray-600 bg-white text-gray-700 dark:text-white shadow-lg rounded-lg p-8 lg:mb-8 mb-16 pb-12 tracking-wide">
-      <h3 className="text-xl mb-8 border-b pb-4 tracking-wide">Categories</h3>
+    <MainContainer>
       {categories.map((category) => (
-        <Link key={category.slug} href={`/category/${category.slug}`} passHref>
-          <span className="cursor-pointer block pb-3 mb-3">
-            {category.name}
-          </span>
-        </Link>
+        <Container key={category.slug}>
+          <Link href={`/category/${category.slug}`} passHref>
+            <span>{category.name}</span>
+          </Link>
+        </Container>
       ))}
-    </div>
+    </MainContainer>
   );
 };
 

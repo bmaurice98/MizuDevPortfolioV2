@@ -3,21 +3,20 @@ import React from "react";
 import styled from "styled-components";
 import { HomeButton } from "../../components/HomeButton";
 import { LogoComponent } from "../../components/LogoComponent";
+import Slider from "../../components/Slider";
 import { Socials } from "../../components/Socials";
+import { getPosts } from "../../services";
 import BlogComponent from "./BlogComponent";
 
 const MainContainer = styled.div`
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
   width: 100vw;
 `;
 
 const Container = styled.div`
   background-color: ${(props) => `rgba(${props.theme.bodyRgba}, 0.8)`};
   width: 100%;
-  height: 100vh;
+  height: 3000px;
+  overflow-y: scroll;
   position: relative;
   padding-bottom: 5rem;
 `;
@@ -35,7 +34,7 @@ const Grid = styled.div`
   grid-gap: calc(1rem + 2vw);
 `;
 
-const Blog = () => {
+const Blog = ({ posts }) => {
   return (
     <>
       <Head>
@@ -51,9 +50,23 @@ const Blog = () => {
           <HomeButton />
           <LogoComponent />
           <Socials />
+          <Slider />
           <Center>
             <Grid>
-              <BlogComponent />
+              {posts?.length > 0 ? (
+                posts.map((post) => (
+                  <>
+                    <BlogComponent post={post.node} key={post.node.slug} />
+                    <BlogComponent post={post.node} key={post.node.slug} />
+                    <BlogComponent post={post.node} key={post.node.slug} />
+                    <BlogComponent post={post.node} key={post.node.slug} />
+                    <BlogComponent post={post.node} key={post.node.slug} />
+                    <BlogComponent post={post.node} key={post.node.slug} />
+                  </>
+                ))
+              ) : (
+                <h2>No Posts created as of yet</h2>
+              )}
             </Grid>
           </Center>
         </Container>
@@ -63,3 +76,12 @@ const Blog = () => {
 };
 
 export default Blog;
+
+export async function getStaticProps() {
+  const posts = (await getPosts()) || null;
+
+  return {
+    props: { posts },
+    revalidate: 6000,
+  };
+}
