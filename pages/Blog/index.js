@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { HomeButton } from "../../components/HomeButton";
 import { LogoComponent } from "../../components/LogoComponent";
@@ -10,13 +10,14 @@ import BlogComponent from "./BlogComponent";
 
 const MainContainer = styled.div`
   width: 100vw;
+  height: 100vh;
+  overflow: auto;
 `;
 
 const Container = styled.div`
   background-color: ${(props) => `rgba(${props.theme.bodyRgba}, 0.8)`};
   width: 100%;
-  height: 3000px;
-  overflow-y: scroll;
+  height: auto;
   position: relative;
   padding-bottom: 5rem;
 `;
@@ -25,7 +26,7 @@ const Center = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 10rem;
+  padding: 10rem 0rem;
 `;
 
 const Grid = styled.div`
@@ -35,6 +36,19 @@ const Grid = styled.div`
 `;
 
 const Blog = ({ posts }) => {
+  const [divHeight, setDivHeight] = useState(0);
+  const ref = useRef(null);
+  useEffect(() => {
+    setDivHeight(ref.current.clientHeight);
+    console.log("height: ", ref.current.clientHeight);
+    window.addEventListener("scroll", function (e) {
+      console.log(window.scrollY);
+    });
+    return () => {
+      window.removeEventListener("scroll", console.log("scrolling stopped"));
+    };
+  }, []);
+
   return (
     <>
       <Head>
@@ -46,22 +60,40 @@ const Blog = ({ posts }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainContainer>
-        <Container>
+        <Container ref={ref}>
           <HomeButton />
           <LogoComponent />
           <Socials />
-          <Slider />
+          <Slider comp={ref.current} />
           <Center>
             <Grid>
               {posts?.length > 0 ? (
                 posts.map((post) => (
                   <>
-                    <BlogComponent post={post.node} key={post.node.slug} />
-                    <BlogComponent post={post.node} key={post.node.slug} />
-                    <BlogComponent post={post.node} key={post.node.slug} />
-                    <BlogComponent post={post.node} key={post.node.slug} />
-                    <BlogComponent post={post.node} key={post.node.slug} />
-                    <BlogComponent post={post.node} key={post.node.slug} />
+                    <BlogComponent
+                      post={post.node}
+                      key={post.node.slug + "a"}
+                    />
+                    <BlogComponent
+                      post={post.node}
+                      key={post.node.slug + "b"}
+                    />
+                    <BlogComponent
+                      post={post.node}
+                      key={post.node.slug + "c"}
+                    />
+                    <BlogComponent
+                      post={post.node}
+                      key={post.node.slug + "d"}
+                    />
+                    <BlogComponent
+                      post={post.node}
+                      key={post.node.slug + "e"}
+                    />
+                    <BlogComponent
+                      post={post.node}
+                      key={post.node.slug + "f"}
+                    />
                   </>
                 ))
               ) : (

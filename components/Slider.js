@@ -2,7 +2,9 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  position: relative;
+  position: absolute;
+  height: 100%;
+  width: 100%;
 `;
 
 const Circle = styled.div`
@@ -48,31 +50,34 @@ const STROKE_WIDTH = 6;
 const RADIUS = DIAMETER / 2 - STROKE_WIDTH / 2;
 const CIRCUMFERENCE = Math.PI * RADIUS * 2;
 
-const Slider = () => {
-  const articleRef = useRef();
+const Slider = (props) => {
+  const { comp } = props;
   const [progress, setProgress] = useState(0);
   const position = Math.max(1 - progress, 0);
+  console.log(comp);
 
   useEffect(() => {
-    const updateHeight = () => {
-      if (!articleRef.current) return;
+    const handleScroll = () => {
+      let scrollPosition = window.pageYOffset;
+      let windowSize = window.innerHeight;
+      let bodyHeight = document.body.offsetHeight;
 
-      const { height } = articleRef.current.getBoundingClientRect();
+      let diff = Math.max(bodyHeight - (scrollPosition + windowSize));
 
-      setProgress(window.scrollY / (height - window.innerHeight));
+      let diffP = (diff * 100) / (bodyHeight - windowSize);
     };
 
-    updateHeight();
+    handleScroll();
 
-    window.addEventListener("scroll", updateHeight);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener("scroll", updateHeight);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
     <Container>
-      <Circle ref={articleRef}>
+      <Circle>
         <svg
           viewBox="0 0 50 50"
           width="100px"
@@ -83,7 +88,7 @@ const Slider = () => {
             cx={DIAMETER / 2}
             cy={DIAMETER / 2}
             r={RADIUS}
-            stroke="tomato"
+            stroke="#57BC90"
             fill="transparent"
             strokeWidth={STROKE_WIDTH}
             style={{
