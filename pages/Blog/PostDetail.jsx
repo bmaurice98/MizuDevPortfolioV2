@@ -81,7 +81,7 @@ const PostDetail = ({ post }) => {
 
   return (
     <>
-      <div className="transition duration-500 dark:bg-gray-600 bg-white text-gray-700 dark:text-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8">
+      <div className="transition duration-500 dark:bg-gray-600 bg-white text-gray-700 dark:text-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8 h-screen">
         <div className="relatice overflow-hidden shadow-md mb-6">
           <img
             src={post.featuredImage.url || null}
