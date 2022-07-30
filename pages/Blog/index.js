@@ -37,6 +37,7 @@ const Grid = styled.div`
 
 const Blog = ({ posts }) => {
   const [divHeight, setDivHeight] = useState(0);
+  const [numers, setNumers] = useState(0);
   const ref = useRef(null);
   useEffect(() => {
     setDivHeight(ref.current.clientHeight);
