@@ -76,29 +76,27 @@ const Slider = (props) => {
   }, []);
 
   return (
-    <Container>
-      <Circle>
-        <svg
-          viewBox="0 0 50 50"
-          width="100px"
-          height="100px"
-          className="circle-progress"
-        >
-          <circle
-            cx={DIAMETER / 2}
-            cy={DIAMETER / 2}
-            r={RADIUS}
-            stroke="#57BC90"
-            fill="transparent"
-            strokeWidth={STROKE_WIDTH}
-            style={{
-              strokeDasharray: CIRCUMFERENCE,
-              strokeDashoffset: CIRCUMFERENCE * position,
-            }}
-          />
-        </svg>
-      </Circle>
-    </Container>
+    <Circle>
+      <svg
+        viewBox="0 0 50 50"
+        width="100px"
+        height="100px"
+        className="circle-progress"
+      >
+        <circle
+          cx={DIAMETER / 2}
+          cy={DIAMETER / 2}
+          r={RADIUS}
+          stroke="#57BC90"
+          fill="transparent"
+          strokeWidth={STROKE_WIDTH}
+          style={{
+            strokeDasharray: CIRCUMFERENCE,
+            strokeDashoffset: CIRCUMFERENCE * position,
+          }}
+        />
+      </svg>
+    </Circle>
   );
 };
 
