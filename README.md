@@ -24,7 +24,10 @@ Soon to be displayed at [Devmizu.tech]
 - Dev Blog
 - Book Library
 - Spotify
+
   - Current Track
   - My Top Tracks
   - My Top Artists
   - Recent Tracks
+
+  I will continue making this tomorrow morning
