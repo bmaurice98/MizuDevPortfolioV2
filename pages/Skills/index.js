@@ -4,7 +4,6 @@ import { HomeButton } from "../../components/HomeButton";
 import { LogoComponent } from "../../components/LogoComponent";
 import { Socials } from "../../components/Socials";
 import { lightTheme } from "../../components/Themes";
-import { Design, Develope } from "";
 
 const MainContainer = styled.div`
   width: 100vw;
@@ -16,8 +15,6 @@ const MainContainer = styled.div`
   align-items: center;
 `;
 
-const Container = styled.div``;
-
 const Main = styled.div`
   width: 30vw;
   height: 60vh;
@@ -27,9 +24,16 @@ const Main = styled.div`
   align-items: center;
   z-index: 3;
   line-height: 1.5;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-family: "Ubuntu Mono", monospace;
+
+  &:hover {
+    color: ${(props) => props.theme.body};
+    background-color: ${(props) => props.theme.text};
+  }
 `;
 
 const Title = styled.h2`
@@ -37,6 +41,31 @@ const Title = styled.h2`
   justify-content: center;
   align-items: center;
   font-size: calc(1em + 1vw);
+  font-weight: 600;
+`;
+
+const Description = styled.div`
+  color: ${(props) => props.theme.text};
+  font-size: calc(0.6em + 1vw);
+  padding: 0.5rem 0;
+  text-align: center;
+  & > *:hover {
+    & > * {
+      color: ${(props) => props.theme.body};
+    }
+  }
+
+  strong {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+`;
+const Skills = styled.div`
+  color: ${(props) => props.theme.text};
+  font-size: calc(0.6em + 1vw);
+  padding: 0.5rem 0;
+  display: flex;
+  list-style: none;
 `;
 
 const SkillsPage = () => {
@@ -44,9 +73,20 @@ const SkillsPage = () => {
     <ThemeProvider theme={lightTheme}>
       <MainContainer>
         <Main>
-          <Title></Title>
+          <Title>Full Stack Developer</Title>
+          <Description>
+            I like to apply my passions to developing products that will leave
+            positive influences on the world.
+          </Description>
+          <Description>
+            <strong>Languages</strong>
+            <p>JavaScript, Typescript, HTML, CSS, Python</p>
+            <strong>Frameworks</strong>
+            <p>ReactJS, NextJS, Tailwind, Prisma, Docker</p>
+            <strong>Database</strong>
+            <p>MongoDB, Firebase, PostgreSQL</p>
+          </Description>
         </Main>
-        <Main>2</Main>
         <HomeButton />
         <LogoComponent />
         <Socials />
