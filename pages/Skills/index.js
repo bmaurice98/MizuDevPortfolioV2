@@ -2,6 +2,7 @@ import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { HomeButton } from "../../components/HomeButton";
 import { LogoComponent } from "../../components/LogoComponent";
+import ParticleComponent from "../../components/ParticleComponent";
 import { Socials } from "../../components/Socials";
 import { lightTheme } from "../../components/Themes";
 
@@ -29,6 +30,7 @@ const Main = styled.div`
   flex-direction: column;
   justify-content: space-between;
   font-family: "Ubuntu Mono", monospace;
+  cursor: pointer;
 
   &:hover {
     color: ${(props) => props.theme.body};
@@ -42,6 +44,11 @@ const Title = styled.h2`
   align-items: center;
   font-size: calc(1em + 1vw);
   font-weight: 600;
+  ${Main}:hover {
+    & > * {
+      color: ${(props) => props.theme.body};
+    }
+  }
 `;
 
 const Description = styled.div`
@@ -49,10 +56,8 @@ const Description = styled.div`
   font-size: calc(0.6em + 1vw);
   padding: 0.5rem 0;
   text-align: center;
-  & > *:hover {
-    & > * {
-      color: ${(props) => props.theme.body};
-    }
+  ${Main}:hover & {
+    color: ${(props) => props.theme.body};
   }
 
   strong {
@@ -90,6 +95,7 @@ const SkillsPage = () => {
         <HomeButton />
         <LogoComponent />
         <Socials />
+        <ParticleComponent />
       </MainContainer>
     </ThemeProvider>
   );
