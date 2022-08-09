@@ -14,10 +14,15 @@ const Box = styled.div`
   z-index: 0;
 `;
 
-const ParticleComponent = () => {
-  return <Box>
-    <Particles
-  </Box>;
+const ParticleComponent = (props) => {
+  return (
+    <Box>
+      <Particles
+        style={{ position: "absolute", top: 0 }}
+        params={props.theme === "light" ? configLight : configDark}
+      />
+    </Box>
+  );
 };
 
 export default ParticleComponent;
