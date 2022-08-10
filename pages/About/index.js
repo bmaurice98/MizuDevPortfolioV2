@@ -22,7 +22,7 @@ const Container = styled.div`
 
 const Center = styled.div`
   border: 2px solid ${(props) => props.theme.text};
-  color: ${(props) => props.theme.text};
+  color: ${(props) => props.theme.body};
   padding: 2rem;
   width: 50vw;
   height: 60vh;
@@ -31,7 +31,8 @@ const Center = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: calc(0.5rem + 1vw);
+  text-align: center;
+  font-size: calc(0.8rem + 1vw);
   backdrop-filter: blur(2px);
   position: relative;
   margin: auto auto;
@@ -48,7 +49,16 @@ const AboutPage = () => {
         <LogoComponent theme="dark" />
         <Socials theme="dark" />
         <ParticleComponent theme="dark" />
-        <Center>About me</Center>
+        <Center>
+          I&apos;ve always been a techie, fantasizing of new ideas to make
+          unnecessarily complex problems simpler
+          <br></br>
+          My Tech related interests are with Building Web 3.0 Technologies as
+          well as Deep Learning Applications
+          <br></br>I try to apply my passions to developing products with
+          Node.js and Modern Javascript Libraries and Frameworks such as React
+          and NextJS
+        </Center>
       </MainContainer>
     </ThemeProvider>
   );
