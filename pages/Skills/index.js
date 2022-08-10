@@ -92,10 +92,10 @@ const SkillsPage = () => {
             <p>MongoDB, Firebase, PostgreSQL</p>
           </Description>
         </Main>
-        <HomeButton />
-        <LogoComponent />
-        <Socials />
-        <ParticleComponent />
+        <HomeButton theme="light" />
+        <LogoComponent theme="light" />
+        <Socials theme="light" />
+        <ParticleComponent theme="light" />
       </MainContainer>
     </ThemeProvider>
   );

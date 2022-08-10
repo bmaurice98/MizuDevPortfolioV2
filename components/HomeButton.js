@@ -3,7 +3,10 @@ import { Button } from "@chakra-ui/react";
 import { TriangleUpIcon } from "@chakra-ui/icons";
 import Link from "next/link";
 
-export const HomeButton = () => {
+export const HomeButton = (props) => {
+  const bg = props.theme === "dark" ? "feather" : "forest_Green";
+  const clr = props.theme === "dark" ? "forest_Green" : "feather";
+
   return (
     <Link href="/">
       <Button
@@ -16,8 +19,8 @@ export const HomeButton = () => {
         height={"2.5rem"}
         zIndex={6}
         _hover={{
-          background: "#015249",
-          color: "f+eather",
+          background: bg,
+          color: clr,
         }}
       >
         <TriangleUpIcon />

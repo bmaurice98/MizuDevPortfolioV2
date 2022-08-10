@@ -2,25 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { HomeButton } from "../../components/HomeButton";
 import { LogoComponent } from "../../components/LogoComponent";
+import ParticleComponent from "../../components/ParticleComponent";
 import { Socials } from "../../components/Socials";
 
 const MainContainer = styled.div`
   width: 100vw;
   height: 100vh;
-
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Karla", sans-serif;
-    font-weight: 500;
-  }
-
-  a > * {
-    font-weight: 700;
-    font-size: larger;
-  }
 `;
 
 const Container = styled.div`
@@ -45,6 +32,7 @@ const ProjectPage = () => {
         <HomeButton />
         <LogoComponent />
         <Socials />
+        <ParticleComponent />
       </Container>
       <Center></Center>
     </MainContainer>

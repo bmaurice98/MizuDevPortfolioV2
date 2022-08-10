@@ -1,8 +1,11 @@
+import { ThemeProvider } from "@emotion/react";
 import React from "react";
 import styled from "styled-components";
 import { HomeButton } from "../../components/HomeButton";
 import { LogoComponent } from "../../components/LogoComponent";
+import ParticleComponent from "../../components/ParticleComponent";
 import { Socials } from "../../components/Socials";
+import { darkTheme } from "../../components/Themes";
 
 const MainContainer = styled.div`
   width: 100vw;
@@ -26,14 +29,17 @@ const Center = styled.div`
 
 const AboutPage = () => {
   return (
-    <MainContainer>
-      <Container>
-        <HomeButton />
-        <LogoComponent />
-        <Socials />
-      </Container>
-      <Center></Center>
-    </MainContainer>
+    <ThemeProvider theme={darkTheme}>
+      <MainContainer>
+        <Container>
+          <HomeButton theme="dark" />
+          <LogoComponent theme="dark" />
+          <Socials theme="dark" />
+          <ParticleComponent theme="dark" />
+        </Container>
+        <Center></Center>
+      </MainContainer>
+    </ThemeProvider>
   );
 };
 
