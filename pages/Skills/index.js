@@ -34,7 +34,7 @@ const Main = styled.div`
 
   &:hover {
     color: ${(props) => props.theme.body};
-    background-color: ${(props) => props.theme.text};
+    background-color: ${(props) => `rgba(${props.theme.textRgba}, 0.6)`};
   }
 `;
 

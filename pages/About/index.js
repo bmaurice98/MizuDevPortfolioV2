@@ -21,23 +21,34 @@ const Container = styled.div`
 `;
 
 const Center = styled.div`
+  border: 2px solid ${(props) => props.theme.text};
+  color: ${(props) => props.theme.text};
+  padding: 2rem;
+  width: 50vw;
+  height: 60vh;
+  z-index: 3;
+  line-height: 1.5;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 10rem;
+  font-size: calc(0.5rem + 1vw);
+  backdrop-filter: blur(2px);
+  position: relative;
+  margin: auto auto;
+  top: 10rem;
+  font-family: "Ubuntu Mono", monospace;
+  font-style: italic;
 `;
 
 const AboutPage = () => {
   return (
     <ThemeProvider theme={darkTheme}>
       <MainContainer>
-        <Container>
-          <HomeButton theme="dark" />
-          <LogoComponent theme="dark" />
-          <Socials theme="dark" />
-          <ParticleComponent theme="dark" />
-        </Container>
-        <Center></Center>
+        <HomeButton theme="dark" />
+        <LogoComponent theme="dark" />
+        <Socials theme="dark" />
+        <ParticleComponent theme="dark" />
+        <Center>About me</Center>
       </MainContainer>
     </ThemeProvider>
   );
