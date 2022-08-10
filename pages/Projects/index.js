@@ -1,6 +1,5 @@
 import { ThemeProvider } from "@emotion/react";
-import React, { useRef } from "react";
-import { useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import { HomeButton } from "../../components/HomeButton";
 import { LogoComponent } from "../../components/LogoComponent";
@@ -11,10 +10,10 @@ import { darkTheme } from "../../components/Themes";
 import { Projects } from "../../data/Projects";
 
 const MainContainer = styled.div`
-  height: 400vh;
   background-color: ${(props) => `rgba(${props.theme.bodyRgba})`};
+  height: 400vh;
   position: relative;
-  overflow: scroll;
+  overflow: hidden;
 `;
 
 const Center = styled.ul`
@@ -33,7 +32,7 @@ const ProjectPage = () => {
   useEffect(() => {
     let element = ref.current;
     const rotate = () => {
-      element.style.transform = `translateX(${-window.pageYOffset}px`;
+      element.style.transform = `translateX(${-Window.pageYOffset}px)`;
     };
     window.addEventListener("scroll", rotate);
 
