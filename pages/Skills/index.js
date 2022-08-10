@@ -35,6 +35,7 @@ const Main = styled.div`
   &:hover {
     color: ${(props) => props.theme.body};
     background-color: ${(props) => `rgba(${props.theme.textRgba}, 0.6)`};
+    backdrop-filter: blur(3px);
   }
 `;
 
