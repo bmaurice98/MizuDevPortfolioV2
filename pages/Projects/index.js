@@ -46,7 +46,7 @@ const ProjectPage = () => {
         <LogoComponent theme="dark" />
         <Socials theme="dark" />
         <ParticleComponent theme="dark" />
-        <BigTitle top="10%" right="20%" text="WORK" />
+        <BigTitle top="5%" left="5%" text="WORK" />
         <Center ref={ref}>
           {Projects.map((project, index) => (
             <ProjectCard key={index} data={project} />

@@ -9,7 +9,6 @@ export default function Home() {
         <meta name="description" content="My Web Developer Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Main />
     </>
   );

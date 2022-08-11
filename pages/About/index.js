@@ -50,7 +50,7 @@ const AboutPage = () => {
         <LogoComponent theme="dark" />
         <Socials theme="dark" />
         <ParticleComponent theme="dark" />
-        <BigTitle top="5%" right="45%" text="ABOUT ME" />
+        <BigTitle top="5%" right="45%" text="ABOUT ME" theme="dark" />
         <Center>
           I&apos;ve always been a techie, fantasizing of new ideas to make
           unnecessarily complex problems simpler
