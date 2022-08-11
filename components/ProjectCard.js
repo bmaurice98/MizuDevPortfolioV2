@@ -1,8 +1,9 @@
+import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
-const Box = styled.li`
+const Box = styled(motion.li)`
   width: 25vw;
   height: 50vh;
   background-color: ${(props) => props.theme.text};
@@ -49,11 +50,24 @@ const Tag = styled.span`
   font-size: calc(0.8em + 0.3vw);
 `;
 
+const Card = {
+  hidden: {
+    scale: 0,
+  },
+  show: {
+    scale: 1,
+    transition: {
+      type: "spring",
+      duration: 0.5,
+    },
+  },
+};
+
 const ProjectCard = (props) => {
   const { title, summary, description, tech, devices, link } = props.data;
   return (
     <a href={link} target="_blank" rel="noopener noreferrer">
-      <Box>
+      <Box variants={Card} key={title}>
         <Head>{title}</Head>
         <Description>{summary}</Description>
         <Tags>

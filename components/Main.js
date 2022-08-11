@@ -6,7 +6,7 @@ import { HomeButton } from "./HomeButton";
 import { LogoComponent } from "./LogoComponent";
 import { Socials } from "./Socials";
 import { Spirals } from "./svgs";
-import { motion } from "framer-motion";
+import { motion, useSpring } from "framer-motion";
 import Intro from "./intro";
 
 const MainContainer = styled.div`
@@ -167,7 +167,18 @@ const Main = () => {
             target={"_blank"}
             rel="noreferrer"
           >
-            <motion.h3 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
+            <motion.h3
+              initial={{
+                y: -200,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              animate={{
+                y: 0,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.8 }}
+            >
               Contact me
             </motion.h3>
           </a>
@@ -175,16 +186,38 @@ const Main = () => {
         <Blog>
           <Link href={"/Blog"}>
             <a>
-              <motion.h3 whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.8 }}>
+              <motion.h2
+                whileHover={{ scale: 1.3 }}
+                whileTap={{ scale: 0.8 }}
+                initial={{
+                  y: -200,
+                  transition: { type: "spring", duration: 1.5, delay: 1 },
+                }}
+                animate={{
+                  y: 0,
+                  transition: { type: "spring", duration: 1.5, delay: 1 },
+                }}
+              >
                 Blog
-              </motion.h3>
+              </motion.h2>
             </a>
           </Link>
         </Blog>
         <Projects click={click}>
           <Link href={"/Projects"} passHref>
             <a>
-              <motion.h3 whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.8 }}>
+              <motion.h3
+                whileHover={{ scale: 1.3 }}
+                whileTap={{ scale: 0.8 }}
+                initial={{
+                  y: -200,
+                  transition: { type: "spring", duration: 1.5, delay: 1 },
+                }}
+                animate={{
+                  y: 0,
+                  transition: { type: "spring", duration: 1.5, delay: 1 },
+                }}
+              >
                 Projects
               </motion.h3>
             </a>
@@ -195,6 +228,14 @@ const Main = () => {
             <Link href={"/About"} passHref>
               <a>
                 <motion.h3
+                  initial={{
+                    y: 200,
+                    transition: { type: "spring", duration: 1.5, delay: 1 },
+                  }}
+                  animate={{
+                    y: 0,
+                    transition: { type: "spring", duration: 1.5, delay: 1 },
+                  }}
                   whileHover={{ scale: 1.3 }}
                   whileTap={{ scale: 0.8 }}
                 >
@@ -207,6 +248,14 @@ const Main = () => {
             <Link href={"/Skills"} passHref>
               <a>
                 <motion.h3
+                  initial={{
+                    y: 200,
+                    transition: { type: "spring", duration: 1.5, delay: 1 },
+                  }}
+                  animate={{
+                    y: 0,
+                    transition: { type: "spring", duration: 1.5, delay: 1 },
+                  }}
                   whileHover={{ scale: 1.3 }}
                   whileTap={{ scale: 0.8 }}
                 >
