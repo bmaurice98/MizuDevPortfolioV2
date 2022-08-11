@@ -1,6 +1,7 @@
 import { ThemeProvider } from "@emotion/react";
 import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
+import BigTitle from "../../components/BigTitle";
 import { HomeButton } from "../../components/HomeButton";
 import { LogoComponent } from "../../components/LogoComponent";
 import ParticleComponent from "../../components/ParticleComponent";
@@ -45,6 +46,7 @@ const ProjectPage = () => {
         <LogoComponent theme="dark" />
         <Socials theme="dark" />
         <ParticleComponent theme="dark" />
+        <BigTitle top="10%" right="20%" text="WORK" />
         <Center ref={ref}>
           {Projects.map((project, index) => (
             <ProjectCard key={index} data={project} />

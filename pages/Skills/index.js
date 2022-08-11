@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
+import BigTitle from "../../components/BigTitle";
 import { HomeButton } from "../../components/HomeButton";
 import { LogoComponent } from "../../components/LogoComponent";
 import ParticleComponent from "../../components/ParticleComponent";
@@ -97,6 +98,7 @@ const SkillsPage = () => {
         <LogoComponent theme="light" />
         <Socials theme="light" />
         <ParticleComponent theme="light" />
+        <BigTitle top="70%" right="5%" text="SKILLS" />
       </MainContainer>
     </ThemeProvider>
   );

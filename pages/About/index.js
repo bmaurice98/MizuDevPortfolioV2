@@ -1,6 +1,7 @@
 import { ThemeProvider } from "@emotion/react";
 import React from "react";
 import styled from "styled-components";
+import BigTitle from "../../components/BigTitle";
 import { HomeButton } from "../../components/HomeButton";
 import { LogoComponent } from "../../components/LogoComponent";
 import ParticleComponent from "../../components/ParticleComponent";
@@ -49,6 +50,7 @@ const AboutPage = () => {
         <LogoComponent theme="dark" />
         <Socials theme="dark" />
         <ParticleComponent theme="dark" />
+        <BigTitle top="5%" right="45%" text="ABOUT ME" />
         <Center>
           I&apos;ve always been a techie, fantasizing of new ideas to make
           unnecessarily complex problems simpler

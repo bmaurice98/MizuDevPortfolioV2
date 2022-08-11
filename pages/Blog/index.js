@@ -2,6 +2,7 @@ import Head from "next/head";
 import React, { useEffect, useRef, useState } from "react";
 import { useLayoutEffect } from "react";
 import styled from "styled-components";
+import BigTitle from "../../components/BigTitle";
 import { HomeButton } from "../../components/HomeButton";
 import { LogoComponent } from "../../components/LogoComponent";
 import Slider from "../../components/Slider";
@@ -72,6 +73,7 @@ const Blog = ({ posts }) => {
           <HomeButton />
           <LogoComponent />
           <Socials />
+          <BigTitle left="5rem" top="5rem" text="BLOG" />
           <Slider progress={progress} />
           <Center>
             <Grid>
