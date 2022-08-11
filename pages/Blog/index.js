@@ -1,5 +1,6 @@
 import Head from "next/head";
 import React, { useEffect, useRef, useState } from "react";
+import { useLayoutEffect } from "react";
 import styled from "styled-components";
 import { HomeButton } from "../../components/HomeButton";
 import { LogoComponent } from "../../components/LogoComponent";
@@ -36,17 +37,23 @@ const Grid = styled.div`
 `;
 
 const Blog = ({ posts }) => {
-  const [divHeight, setDivHeight] = useState(0);
-  const [numers, setNumers] = useState(0);
+  const [progress, setProgress] = useState(0);
+
   const ref = useRef(null);
   useEffect(() => {
-    setDivHeight(ref.current.clientHeight);
-    console.log("height: ", ref.current.clientHeight);
-    window.addEventListener("scroll", function (e) {
-      console.log(window.scrollY);
-    });
+    const updateHeight = () => {
+      if (!ref.current) return;
+
+      const { height } = ref.current.getBoundingClientRect();
+      console.log(height);
+
+      setProgress(window.scrollY / (height - window.innerHeight));
+    };
+    console.log(progress);
+    updateHeight();
+    window.addEventListener("scroll", updateHeight());
     return () => {
-      window.removeEventListener("scroll", console.log("scrolling stopped"));
+      window.removeEventListener("scroll", updateHeight());
     };
   }, []);
 
@@ -65,7 +72,7 @@ const Blog = ({ posts }) => {
           <HomeButton />
           <LogoComponent />
           <Socials />
-          <Slider comp={ref.current} />
+          <Slider progress={progress} />
           <Center>
             <Grid>
               {posts?.length > 0 ? (

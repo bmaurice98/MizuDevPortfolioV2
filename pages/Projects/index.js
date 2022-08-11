@@ -10,10 +10,9 @@ import { darkTheme } from "../../components/Themes";
 import { Projects } from "../../data/Projects";
 
 const MainContainer = styled.div`
-  background-color: ${(props) => `rgba(${props.theme.bodyRgba})`};
-  height: 400vh;
+  height: 300vh;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
 `;
 
 const Center = styled.ul`
@@ -32,7 +31,7 @@ const ProjectPage = () => {
   useEffect(() => {
     let element = ref.current;
     const rotate = () => {
-      element.style.transform = `translateX(${-Window.pageYOffset}px)`;
+      element.style.transform = `translateX(${-window.pageYOffset}px)`;
     };
     window.addEventListener("scroll", rotate);
 

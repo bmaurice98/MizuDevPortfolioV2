@@ -52,7 +52,7 @@ const Tag = styled.span`
 const ProjectCard = (props) => {
   const { title, summary, description, tech, devices, link } = props.data;
   return (
-    <Link href={link} target="_blank">
+    <a href={link} target="_blank" rel="noopener noreferrer">
       <Box>
         <Head>{title}</Head>
         <Description>{summary}</Description>
@@ -62,7 +62,7 @@ const ProjectCard = (props) => {
           })}
         </Tags>
       </Box>
-    </Link>
+    </a>
   );
 };
 

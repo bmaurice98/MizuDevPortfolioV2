@@ -51,29 +51,8 @@ const RADIUS = DIAMETER / 2 - STROKE_WIDTH / 2;
 const CIRCUMFERENCE = Math.PI * RADIUS * 2;
 
 const Slider = (props) => {
-  const { comp } = props;
-  const [progress, setProgress] = useState(0);
+  const progress = props.progress;
   const position = Math.max(1 - progress, 0);
-  console.log(comp);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      let scrollPosition = window.pageYOffset;
-      let windowSize = window.innerHeight;
-      let bodyHeight = document.body.offsetHeight;
-
-      let diff = Math.max(bodyHeight - (scrollPosition + windowSize));
-
-      let diffP = (diff * 100) / (bodyHeight - windowSize);
-    };
-
-    handleScroll();
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <Circle>
