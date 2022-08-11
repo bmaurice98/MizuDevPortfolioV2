@@ -4,8 +4,11 @@ import styled from "styled-components";
 import Categories from "./Categories";
 import PostCard from "./PostCard";
 import moment from "moment";
+import { motion } from "framer-motion";
 
-const Box = styled.div`
+const Container = styled(motion(Link))``;
+
+const Box = styled(motion.div)`
   position: relative;
   width: calc(10rem + 15vw);
   text-decoration: none;
@@ -42,7 +45,7 @@ const Image = styled.div`
 
 const Title = styled.h3`
   color: inherit;
-  padding: 0%.5rem 0;
+  padding: 0.5rem 0;
   padding-top: 1rem;
   font-family: "Karla", sans-serif;
   font-weight: 700;
@@ -59,6 +62,19 @@ const Date = styled.span`
   padding: 0.5rem 0;
 `;
 
+const Card = {
+  hidden: {
+    scale: 0,
+  },
+  show: {
+    scale: 1,
+    transition: {
+      type: "spring",
+      duration: 0.5,
+    },
+  },
+};
+
 const BlogComponent = ({ post }) => {
   if (!post) {
     return null;
@@ -67,8 +83,8 @@ const BlogComponent = ({ post }) => {
   const { title, author, categories, excerpt, slug, featuredImage, createdAt } =
     post;
   return (
-    <Link href={"Post/" + slug}>
-      <Box>
+    <Container href={"Post/" + slug}>
+      <Box variants={Card}>
         <Image img={featuredImage.url} alt="" />
         <Title>{title}</Title>
         <Tags>
@@ -76,7 +92,7 @@ const BlogComponent = ({ post }) => {
         </Tags>
         <Date>{moment(post.createdAt).format("MMM DD, YYYY")}</Date>
       </Box>
-    </Link>
+    </Container>
   );
 };
 

@@ -1,6 +1,6 @@
+import { motion } from "framer-motion";
 import Head from "next/head";
 import React, { useEffect, useRef, useState } from "react";
-import { useLayoutEffect } from "react";
 import styled from "styled-components";
 import BigTitle from "../../components/BigTitle";
 import { HomeButton } from "../../components/HomeButton";
@@ -10,7 +10,7 @@ import { Socials } from "../../components/Socials";
 import { getPosts } from "../../services";
 import BlogComponent from "./BlogComponent";
 
-const MainContainer = styled.div`
+const MainContainer = styled(motion.div)`
   width: 100vw;
   height: 100vh;
   overflow: auto;
@@ -36,6 +36,19 @@ const Grid = styled.div`
   grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
   grid-gap: calc(1rem + 2vw);
 `;
+
+const container = {
+  hidden: {
+    opacity: 0,
+  },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+      duration: 0.5,
+    },
+  },
+};
 
 const Blog = ({ posts }) => {
   const [progress, setProgress] = useState(0);
@@ -68,7 +81,12 @@ const Blog = ({ posts }) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <MainContainer>
+      <MainContainer
+        variants={container}
+        initial="hidden"
+        animate="show"
+        exit={{ opacity: 0, transition: { duration: 0.5 } }}
+      >
         <Container ref={ref}>
           <HomeButton />
           <LogoComponent />

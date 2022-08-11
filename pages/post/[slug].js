@@ -8,6 +8,25 @@ import CommentsForm from "../Blog/CommentsForm";
 import PostWidget from "../Blog/PostWidget";
 import Categories from "../Blog/Categories";
 import Loader from "../Blog/Loader";
+import styled from "styled-components";
+import { Socials } from "../../components/Socials";
+import { LogoComponent } from "../../components/LogoComponent";
+import { HomeButton } from "../../components/HomeButton";
+
+const MainContainer = styled.div`
+  background-color: ${(props) => props.theme.body};
+  width: 100vw;
+  height: auto;
+`;
+
+const Container = styled.div`
+  display: flex;
+  width: 60vw;
+  margin: auto auto;
+  align-items: center;
+`;
+
+const PostComp = styled.div``;
 
 const PostDetails = ({ post }) => {
   const router = useRouter();
@@ -17,15 +36,18 @@ const PostDetails = ({ post }) => {
   }
 
   return (
-    <div className="">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        <div className="cols-span-1 lg:col-span-8">
+    <MainContainer>
+      <HomeButton />
+      <LogoComponent />
+      <Socials />
+      <Container>
+        <PostComp className="cols-span-1 lg:col-span-8">
           <PostDetail post={post} />
           <Author author={post.author} />
           <CommentsForm slug={post.slug} />
           <Comments slug={post.slug} />
-        </div>
-        <div className="cols-span-1 lg:col-span-4">
+        </PostComp>
+        {/* <div className="cols-span-1 lg:col-span-4">
           <div className="relative lg:sticky top-14">
             <PostWidget
               slug={post.slug}
@@ -33,9 +55,9 @@ const PostDetails = ({ post }) => {
             />
             <Categories />
           </div>
-        </div>
-      </div>
-    </div>
+        </div> */}
+      </Container>
+    </MainContainer>
   );
 };
 
