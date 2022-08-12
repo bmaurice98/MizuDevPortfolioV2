@@ -70,11 +70,9 @@ const Intro = (props) => {
           transition={{ duration: 1, delay: 2 }}
         >
           <h1>Hello,</h1>
-          <h3>I'm Brandon</h3>
-          <h3>
-            But I also go by <span className="font-bold">Mizu</span>
-          </h3>
-          <h6>I design both clean and functional websites.</h6>
+          <h3>I&apos;m Brandon</h3>
+          <h3>But I also go by Mizu</h3>
+          <h3>I design both clean and functional websites.</h3>
         </Text>
       </SubBox>
       <SubBox>

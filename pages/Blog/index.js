@@ -88,7 +88,7 @@ const Blog = ({ posts }) => {
         exit={{ opacity: 0, transition: { duration: 0.5 } }}
       >
         <Container ref={ref}>
-          <HomeButton />
+          <HomeButton pos="fixed" />
           <LogoComponent />
           <Socials />
           <BigTitle left="5rem" top="5rem" text="BLOG" />

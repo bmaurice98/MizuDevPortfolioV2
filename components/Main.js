@@ -22,7 +22,8 @@ const MainContainer = styled.div`
   h4,
   h5,
   h6 {
-    font-family: "Pacifico", sans-serif;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
     font-weight: 500;
   }
 `;

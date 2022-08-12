@@ -46,7 +46,7 @@ const AboutPage = () => {
   return (
     <ThemeProvider theme={darkTheme}>
       <MainContainer>
-        <HomeButton theme="dark" />
+        <HomeButton theme="dark" pos="fixed" />
         <LogoComponent theme="dark" />
         <Socials theme="dark" />
         <ParticleComponent theme="dark" />

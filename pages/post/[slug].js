@@ -24,6 +24,7 @@ const Container = styled.div`
   width: 60vw;
   margin: auto auto;
   align-items: center;
+  padding-top: 10rem;
 `;
 
 const PostComp = styled.div``;
@@ -37,11 +38,11 @@ const PostDetails = ({ post }) => {
 
   return (
     <MainContainer>
-      <HomeButton />
+      <HomeButton pos="absolute" />
       <LogoComponent />
       <Socials />
       <Container>
-        <PostComp className="cols-span-1 lg:col-span-8">
+        <PostComp>
           <PostDetail post={post} />
           <Author author={post.author} />
           <CommentsForm slug={post.slug} />

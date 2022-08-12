@@ -10,7 +10,7 @@ export const HomeButton = (props) => {
   return (
     <Link href="/">
       <Button
-        pos={"fixed"}
+        pos={props.pos}
         top={"2rem"}
         left={"48.6%"}
         bg={"sleek_Gray"}
