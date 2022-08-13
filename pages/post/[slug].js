@@ -12,6 +12,9 @@ import styled from "styled-components";
 import { Socials } from "../../components/Socials";
 import { LogoComponent } from "../../components/LogoComponent";
 import { HomeButton } from "../../components/HomeButton";
+import { ArrowLeftIcon } from "@chakra-ui/icons";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 const MainContainer = styled.div`
   background-color: ${(props) => `rgba(${props.theme.bodyRgba}, 1)`};
@@ -46,6 +49,13 @@ const PostComp = styled.div`
   padding: 0.5rem 2rem;
 `;
 
+const BackButton = styled(motion.span)`
+  position: fixed;
+  left: 10%;
+  top: 50%;
+  cursor: pointer;
+`;
+
 const PostDetails = ({ post }) => {
   const router = useRouter();
 
@@ -58,6 +68,11 @@ const PostDetails = ({ post }) => {
       <HomeButton pos="absolute" />
       <LogoComponent />
       <Socials />
+      <BackButton whileHover={{ scale: 1.5 }} whileTap={{ scale: 0.8 }}>
+        <Link href={"/Blog"}>
+          <ArrowLeftIcon className="text-3xl hover:text-Forest_Green" />
+        </Link>
+      </BackButton>
       <Container>
         <PostComp>
           <PostDetail post={post} />

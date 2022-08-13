@@ -153,7 +153,7 @@ const Main = () => {
 
   return (
     <MainContainer>
-      <Container className="p-8">
+      <Container>
         <HomeButton />
         <LogoComponent theme={click ? "dark" : "light"} />
         <Socials theme={click ? "dark" : "light"} />

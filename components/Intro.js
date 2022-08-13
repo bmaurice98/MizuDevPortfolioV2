@@ -81,12 +81,7 @@ const Intro = (props) => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 2 }}
         >
-          <Image
-            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-auto"
-            src={ME}
-            alt="profile Pic"
-            layout="fill"
-          />
+          <Image src={ME} alt="profile Pic" layout="fill" />
         </motion.div>
       </SubBox>
     </Box>

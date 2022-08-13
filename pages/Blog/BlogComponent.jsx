@@ -83,7 +83,7 @@ const BlogComponent = ({ post }) => {
   const { title, author, categories, excerpt, slug, featuredImage, createdAt } =
     post;
   return (
-    <Container href={"Post/" + slug}>
+    <Container href={"Post/" + slug} key={slug}>
       <Box variants={Card}>
         <Image img={featuredImage.url} alt="" />
         <Title>{title}</Title>

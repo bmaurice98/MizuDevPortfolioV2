@@ -6,6 +6,7 @@ import { SiSpotify } from "@react-icons/all-files/si/SiSpotify";
 import { SiTwitch } from "@react-icons/all-files/si/SiTwitch";
 import styled from "styled-components";
 import { darkTheme } from "../components/Themes";
+import { motion } from "framer-motion";
 
 const Icons = styled.div`
   display: flex;
@@ -26,7 +27,7 @@ const Icons = styled.div`
   }
 `;
 
-const Line = styled.span`
+const Line = styled(motion.span)`
   width: 2px;
   height: 6rem;
   margin-top: 0.5em;
@@ -41,42 +42,66 @@ export const Socials = (props) => {
   return (
     <>
       <Icons color={props.theme}>
-        <a
+        <motion.a
+          initial={{ transform: "scale(0)" }}
+          animate={{ scale: [0, 1, 1.3, 1] }}
+          transition={{ type: "spring", duration: 1, delay: 1.8 }}
           href={"https://github.com/bmaurice98"}
           target={"_blank"}
           rel="noreferrer"
         >
           <SiGithub fontSize={SOCIAL_SIZE} />
-        </a>
-        <a
+        </motion.a>
+        <motion.a
+          initial={{ transform: "scale(0)" }}
+          animate={{ scale: [0, 1, 1.3, 1] }}
+          transition={{ type: "spring", duration: 1, delay: 1.6 }}
           href={"https://www.linkedin.com/in/brandon-maurice-a77190187/"}
           target={"_blank"}
           rel="noreferrer"
         >
           <SiLinkedin fontSize={SOCIAL_SIZE} />
-        </a>
-        <a
+        </motion.a>
+        <motion.a
+          initial={{ transform: "scale(0)" }}
+          animate={{ scale: [0, 1, 1.3, 1] }}
+          transition={{ type: "spring", duration: 1, delay: 1.4 }}
           href={"https://leetcode.com/MizuPiku/"}
           target={"_blank"}
           rel="noreferrer"
         >
           <SiLeetcode fontSize={SOCIAL_SIZE} />
-        </a>
-        <a
+        </motion.a>
+        <motion.a
+          initial={{ transform: "scale(0)" }}
+          animate={{ scale: [0, 1, 1.3, 1] }}
+          transition={{ type: "spring", duration: 1, delay: 1.2 }}
           href={"https://www.twitch.tv/mizupiku"}
           target={"_blank"}
           rel="noreferrer"
         >
           <SiTwitch fontSize={SOCIAL_SIZE} />
-        </a>
-        <a
+        </motion.a>
+        <motion.a
+          initial={{ transform: "scale(0)" }}
+          animate={{ scale: [0, 1, 1.3, 1] }}
+          transition={{ type: "spring", duration: 1, delay: 1 }}
           href={"https://open.spotify.com/user/bmaurice100"}
           target={"_blank"}
           rel="noreferrer"
         >
           <SiSpotify fontSize={SOCIAL_SIZE} />
-        </a>
-        <Line color={props.theme} />
+        </motion.a>
+        <Line
+          color={props.theme}
+          initial={{
+            height: "0",
+          }}
+          animate={{
+            height: "6rem",
+          }}
+          transition={{ type: "spring", duration: 0.5, delay: 0.5 }}
+        />
       </Icons>
     </>
   );

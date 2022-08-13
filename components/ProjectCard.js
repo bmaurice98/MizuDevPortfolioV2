@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Box = styled(motion.li)`
-  width: 25vw;
+  width: calc(22rem);
   height: 50vh;
   background-color: ${(props) => props.theme.text};
   color: ${(props) => props.theme.body};
