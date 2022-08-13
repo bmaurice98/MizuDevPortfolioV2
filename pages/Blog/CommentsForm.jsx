@@ -1,7 +1,30 @@
 import { comment } from "postcss";
 import React, { useState, useEffect, useRef } from "react";
+import styled from "styled-components";
 
 import { submitComment } from "../../services";
+
+const MainContainer = styled.div`
+  background-color: gray;
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
+    0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  border-radius: 0.5rem /* 8px */;
+  padding: 2rem 3rem 2rem 2rem /* 32px */;
+  margin-bottom: 2rem /* 32px */;
+  width: 100%;
+
+  & > h3 {
+    font-size: 1.25rem /* 20px */;
+    line-height: 1.75rem /* 28px */;
+    margin-bottom: 2rem /* 32px */;
+    border-bottom-width: 1px;
+    padding-bottom: 1rem /* 16px */;
+  }
+`;
 
 const CommentsForm = ({ slug }) => {
   const [error, setError] = useState(false);
@@ -54,7 +77,7 @@ const CommentsForm = ({ slug }) => {
   };
 
   return (
-    <div className="transition duration-500 dark:bg-gray-600 bg-white text-gray-700 dark:text-white shadow-lg rounded-lg p-8 pb-12 mb-8">
+    <MainContainer>
       <h3 className="text-xl mb-8 border-b pb-4">Leave a Comment</h3>
       <div className="grid grid-cols-1 gap-4 mb-4">
         <textarea
@@ -112,7 +135,7 @@ const CommentsForm = ({ slug }) => {
           </span>
         )}
       </div>
-    </div>
+    </MainContainer>
   );
 };
 

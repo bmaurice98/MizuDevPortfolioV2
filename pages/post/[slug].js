@@ -23,6 +23,7 @@ const Container = styled.div`
   background-color: ${(props) => `rgba(${props.theme.bodyRgba}, 1)`};
   box-shadow: 12px 0 15px -4px ${(props) => `rgba(${props.theme.textRgba}, 0.25)`},
     -12px 0 8px -4px ${(props) => `rgba(${props.theme.textRgba}, 0.25)`};
+  border-radius: 0 0 10px 10px;
   display: flex;
   width: 60vw;
   margin: auto auto;
@@ -30,9 +31,17 @@ const Container = styled.div`
   padding-top: 5rem;
 `;
 
+const ContainerLower = styled.div`
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  width: 60vw;
+  margin: 2rem auto;
+  align-items: center;
+  flex-direction: column;
+`;
+
 const PostComp = styled.div`
   padding: 0.5rem 2rem;
-  position: relative;
 `;
 
 const PostDetails = ({ post }) => {
@@ -50,11 +59,14 @@ const PostDetails = ({ post }) => {
       <Container>
         <PostComp>
           <PostDetail post={post} />
-          <Author author={post.author} />
-          <CommentsForm slug={post.slug} />
-          <Comments slug={post.slug} />
         </PostComp>
-        {/* <div className="cols-span-1 lg:col-span-4">
+      </Container>
+      <ContainerLower>
+        <Author author={post.author} />
+        <CommentsForm slug={post.slug} />
+        <Comments slug={post.slug} />
+      </ContainerLower>
+      {/* <div className="cols-span-1 lg:col-span-4">
           <div className="relative lg:sticky top-14">
             <PostWidget
               slug={post.slug}
@@ -63,7 +75,6 @@ const PostDetails = ({ post }) => {
             <Categories />
           </div>
         </div> */}
-      </Container>
     </MainContainer>
   );
 };
