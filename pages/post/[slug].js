@@ -14,16 +14,17 @@ import { LogoComponent } from "../../components/LogoComponent";
 import { HomeButton } from "../../components/HomeButton";
 
 const MainContainer = styled.div`
-  background-color: ${(props) => `rgba(${props.theme.bodyRgba}, 0.8)`};
+  background-color: ${(props) => `rgba(${props.theme.bodyRgba}, 1)`};
   width: 100vw;
-  height: auto;
+  height: 100%;
 `;
 
 const Container = styled.div`
-  background-color: ${(props) => `rgba(${props.theme.bodyRgba}, 1)`};
+  background-color: #015249;
   box-shadow: 12px 0 15px -4px ${(props) => `rgba(${props.theme.textRgba}, 0.25)`},
     -12px 0 8px -4px ${(props) => `rgba(${props.theme.textRgba}, 0.25)`};
   border-radius: 0 0 10px 10px;
+  color: white;
   display: flex;
   width: 60vw;
   margin: auto auto;
@@ -35,6 +36,7 @@ const ContainerLower = styled.div`
   border-radius: 0 0 10px 10px;
   display: flex;
   width: 60vw;
+  height: 100%;
   margin: 2rem auto;
   align-items: center;
   flex-direction: column;

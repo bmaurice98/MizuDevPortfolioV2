@@ -91,13 +91,11 @@ const PostDetail = ({ post }) => {
 
   return (
     <>
-      <div className="relative overflow-hidden shadow-md mb-6">
-        <PostImage
-          src={post.featuredImage.url || null}
-          alt={post.title}
-          className="object-top h-full w-full rounded-t-lg"
-        />
-      </div>
+      <PostImage
+        src={post.featuredImage.url || null}
+        alt={post.title}
+        className="object-top h-full w-full rounded-t-lg"
+      />
       <div className="px-4 lg:px-0">
         <div className="flex w-full text-center">
           <span>{moment(post.createdAt).format("MMM DD, YYYY")}</span>

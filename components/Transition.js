@@ -33,6 +33,7 @@ const Transition = ({ children }) => {
         animate="in"
         initial="out"
         exit="out"
+        style={{ height: "100%" }}
       >
         {children}
       </motion.div>

@@ -12,7 +12,6 @@ import BlogComponent from "./BlogComponent";
 
 const MainContainer = styled(motion.div)`
   width: 100vw;
-  height: 100vh;
   overflow: auto;
 `;
 
