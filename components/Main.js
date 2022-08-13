@@ -7,7 +7,7 @@ import { LogoComponent } from "./LogoComponent";
 import { Socials } from "./Socials";
 import { Spirals } from "./svgs";
 import { motion, useSpring } from "framer-motion";
-import Intro from "./intro";
+import Intro from "./Intro";
 
 const MainContainer = styled.div`
   background: ${(props) => props.theme.body};
