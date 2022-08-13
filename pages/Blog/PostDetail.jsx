@@ -1,6 +1,15 @@
 import React from "react";
 import moment from "moment";
-import Image from "next/image";
+import styled from "styled-components";
+
+const PostImage = styled.img`
+  box-shadow: 0 4px 15px 0px ${(props) => `rgba(${props.theme.textRgba}, 0.25)`},
+    0 -4px 15px 0px ${(props) => `rgba(${props.theme.textRgba}, 0.25)`},
+    12px 0 15px -4px ${(props) => `rgba(${props.theme.textRgba}, 0.25)`},
+    -12px 0 15px -4px ${(props) => `rgba(${props.theme.textRgba}, 0.25)`};
+  margin: 1.5rem 0;
+  border-radius: 5px;
+`;
 
 const PostDetail = ({ post }) => {
   const getContentFragment = (index, text, obj, type) => {
@@ -83,7 +92,7 @@ const PostDetail = ({ post }) => {
   return (
     <>
       <div className="relative overflow-hidden shadow-md mb-6">
-        <img
+        <PostImage
           src={post.featuredImage.url || null}
           alt={post.title}
           className="object-top h-full w-full rounded-t-lg"
@@ -98,7 +107,6 @@ const PostDetail = ({ post }) => {
           const children = typeObj.children.map((item, itemIndex) =>
             getContentFragment(itemIndex, item.text, item)
           );
-
           return getContentFragment(index, children, typeObj, typeObj.type);
         })}
       </div>

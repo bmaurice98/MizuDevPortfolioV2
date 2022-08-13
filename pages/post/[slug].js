@@ -14,20 +14,26 @@ import { LogoComponent } from "../../components/LogoComponent";
 import { HomeButton } from "../../components/HomeButton";
 
 const MainContainer = styled.div`
-  background-color: ${(props) => props.theme.body};
+  background-color: ${(props) => `rgba(${props.theme.bodyRgba}, 0.8)`};
   width: 100vw;
   height: auto;
 `;
 
 const Container = styled.div`
+  background-color: ${(props) => `rgba(${props.theme.bodyRgba}, 1)`};
+  box-shadow: 12px 0 15px -4px ${(props) => `rgba(${props.theme.textRgba}, 0.25)`},
+    -12px 0 8px -4px ${(props) => `rgba(${props.theme.textRgba}, 0.25)`};
   display: flex;
   width: 60vw;
   margin: auto auto;
   align-items: center;
-  padding-top: 10rem;
+  padding-top: 5rem;
 `;
 
-const PostComp = styled.div``;
+const PostComp = styled.div`
+  padding: 0.5rem 2rem;
+  position: relative;
+`;
 
 const PostDetails = ({ post }) => {
   const router = useRouter();

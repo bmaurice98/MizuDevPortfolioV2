@@ -98,30 +98,7 @@ const Blog = ({ posts }) => {
               {posts?.length > 0 ? (
                 posts.map((post) => (
                   <>
-                    <BlogComponent
-                      post={post.node}
-                      key={post.node.slug + "a"}
-                    />
-                    <BlogComponent
-                      post={post.node}
-                      key={post.node.slug + "b"}
-                    />
-                    <BlogComponent
-                      post={post.node}
-                      key={post.node.slug + "c"}
-                    />
-                    <BlogComponent
-                      post={post.node}
-                      key={post.node.slug + "d"}
-                    />
-                    <BlogComponent
-                      post={post.node}
-                      key={post.node.slug + "e"}
-                    />
-                    <BlogComponent
-                      post={post.node}
-                      key={post.node.slug + "f"}
-                    />
+                    <BlogComponent post={post.node} key={post.node.slug} />
                   </>
                 ))
               ) : (
