@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import styled, { keyframes } from "styled-components";
 import { Container } from "@chakra-ui/react";
@@ -8,6 +8,7 @@ import { Socials } from "./Socials";
 import { Spirals } from "./svgs";
 import { motion, useSpring } from "framer-motion";
 import Intro from "./Intro";
+import PreLoader from "./PreLoader";
 
 const MainContainer = styled.div`
   background: ${(props) => props.theme.body};
