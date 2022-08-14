@@ -71,43 +71,33 @@ const Blog = ({ posts }) => {
   }, []);
 
   return (
-    <>
-      <Head>
-        <title>DevMizu Blog</title>
-        <meta
-          name="description"
-          content="Conglomerations of my thoughts and interests, expressed throughout blogs"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <MainContainer
-        variants={container}
-        initial="hidden"
-        animate="show"
-        exit={{ opacity: 0, transition: { duration: 0.5 } }}
-      >
-        <Container ref={ref}>
-          <HomeButton pos="fixed" />
-          <LogoComponent />
-          <Socials />
-          <BigTitle left="5rem" top="5rem" text="BLOG" />
-          <Slider progress={progress} />
-          <Center>
-            <Grid>
-              {posts?.length > 0 ? (
-                posts.map((post) => (
-                  <>
-                    <BlogComponent post={post.node} key={post.node.slug} />
-                  </>
-                ))
-              ) : (
-                <h2>No Posts created as of yet</h2>
-              )}
-            </Grid>
-          </Center>
-        </Container>
-      </MainContainer>
-    </>
+    <MainContainer
+      variants={container}
+      initial="hidden"
+      animate="show"
+      exit={{ opacity: 0, transition: { duration: 0.5 } }}
+    >
+      <Container ref={ref}>
+        <HomeButton pos="fixed" />
+        <LogoComponent />
+        <Socials />
+        <BigTitle left="5rem" top="5rem" text="BLOG" />
+        <Slider progress={progress} />
+        <Center>
+          <Grid>
+            {posts?.length > 0 ? (
+              posts.map((post) => (
+                <>
+                  <BlogComponent post={post.node} key={post.node.slug} />
+                </>
+              ))
+            ) : (
+              <h2>No Posts created as of yet</h2>
+            )}
+          </Grid>
+        </Center>
+      </Container>
+    </MainContainer>
   );
 };
 

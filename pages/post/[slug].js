@@ -19,7 +19,7 @@ import { motion } from "framer-motion";
 const MainContainer = styled.div`
   background-color: ${(props) => `rgba(${props.theme.bodyRgba}, 1)`};
   width: 100vw;
-  height: 100%;
+  height: auto;
 `;
 
 const Container = styled.div`

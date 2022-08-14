@@ -1,6 +1,5 @@
 import { ThemeProvider } from "styled-components";
-import { lightTheme, theme } from "../components/Themes";
-import { ChakraProvider } from "@chakra-ui/react";
+import { lightTheme } from "../components/Themes";
 import Transition from "../components/Transition";
 import "../styles/globals.css";
 import "../styles/transition.css";
@@ -10,9 +9,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <Transition>
       <ThemeProvider theme={lightTheme}>
-        <ChakraProvider theme={theme}>
-          <Component {...pageProps} />
-        </ChakraProvider>
+        <Component {...pageProps} />
       </ThemeProvider>
     </Transition>
   );
