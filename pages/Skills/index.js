@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import BigTitle from "../../components/BigTitle";
@@ -79,21 +80,23 @@ const SkillsPage = () => {
   return (
     <ThemeProvider theme={lightTheme}>
       <MainContainer>
-        <Main>
-          <Title>Full Stack Developer</Title>
-          <Description>
-            I like to apply my passions to developing products that will leave
-            positive influences on the world.
-          </Description>
-          <Description>
-            <strong>Languages</strong>
-            <p>JavaScript, Typescript, HTML, CSS, Python</p>
-            <strong>Frameworks</strong>
-            <p>ReactJS, NextJS, Tailwind, Prisma, Docker</p>
-            <strong>Database</strong>
-            <p>MongoDB, Firebase, PostgreSQL</p>
-          </Description>
-        </Main>
+        <Link href={"/Resume"}>
+          <Main>
+            <Title>Full Stack Developer</Title>
+            <Description>
+              I like to apply my passions to developing products that will leave
+              positive influences on the world.
+            </Description>
+            <Description>
+              <strong>Languages</strong>
+              <p>JavaScript, Typescript, HTML, CSS, Python</p>
+              <strong>Frameworks</strong>
+              <p>ReactJS, NextJS, Tailwind, Prisma, Docker</p>
+              <strong>Database</strong>
+              <p>MongoDB, Firebase, PostgreSQL</p>
+            </Description>
+          </Main>
+        </Link>
         <HomeButton theme="light" pos="fixed" />
         <LogoComponent theme="light" />
         <Socials theme="light" />

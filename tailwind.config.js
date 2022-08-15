@@ -10,6 +10,7 @@ module.exports = {
       Forest_Green: "#015249",
       Sleek_Gray: "#A5A5Af",
       Marine: "#57BC90",
+      white: "#fffeee",
     },
     extend: {},
   },
