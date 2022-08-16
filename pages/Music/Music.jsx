@@ -4,7 +4,6 @@ import Image from "next/image";
 import EmblaCarouselTracks from "./EmblaCarousel/EmblaCarouselTopTracks";
 import EmblaCarouselArtists from "./EmblaCarousel/EmblaCarouselTopArtists";
 import EmblaCarouselRecentTracks from "./EmblaCarousel/EmblaCarouselRecentTracks";
-import { Button } from "@mui/material";
 
 export default function Music({ props }) {
   const [trackDisplay, setTrackDisplay] = useState(false);
@@ -24,17 +23,6 @@ export default function Music({ props }) {
 
   return (
     <>
-      <div className="mt-2 ml-3 absolute z-10">
-        {trackDisplay ? (
-          <Button onClick={() => setTrackDisplay(!trackDisplay)}>
-            Show Track Data
-          </Button>
-        ) : (
-          <Button onClick={() => setTrackDisplay(!trackDisplay)}>
-            Show Current Track
-          </Button>
-        )}
-      </div>
       {trackDisplay ? (
         <div className="grid grid-cols-1 lg:min-h-[77.7vh] min-h-screen">
           <div className="justify-center items-center text-center mt-16">
@@ -74,7 +62,7 @@ export default function Music({ props }) {
           </div>
         </div>
       ) : (
-        <div className="min-h-screen">
+        <div className="">
           <div className="relative my-auto top-0">
             <EmblaCarouselTracks slides={props?.topTracks?.items} />
             <EmblaCarouselArtists slides={props?.topArtists?.items} />
