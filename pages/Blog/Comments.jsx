@@ -40,7 +40,7 @@ const Comments = ({ slug }) => {
                 <span className="tracking-normal">{comment.name}</span> on{" "}
                 {moment(comment.createdAt).format("MMM DD, YYYY")}
               </p>
-              <p className="whitespace-pre-line dark:text-white text-gray-700 w-full">
+              <p className="whitespace-pre-line text-gray-700  w-full">
                 {parse(comment.comment)}
               </p>
             </div>
