@@ -1,0 +1,16 @@
+.scene {
+  width: 70vw;
+  height: 90px;
+  margin: auto;
+  position: relative;
+  perspective: 1000px;
+}
+
+.carousel {
+  margin: auto;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+  position: relative;
+  transform-style: preserve-3d;
+}

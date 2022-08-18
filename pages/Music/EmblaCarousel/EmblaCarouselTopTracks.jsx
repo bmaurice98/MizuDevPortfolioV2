@@ -1,8 +1,8 @@
-import React from 'react';
-import { useState, useEffect, useCallback } from 'react';
-import Image from 'next/image'
+import React from "react";
+import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
-import styles from './Embla.module.css'
+import styles from "./Embla.module.css";
 
 const EmblaCarouselTracks = ({ slides }) => {
   const [viewportRef, embla] = useEmblaCarousel({
@@ -27,10 +27,10 @@ const EmblaCarouselTracks = ({ slides }) => {
   }, [embla, onSelect]);
 
   return (
-    <div className="relative mx-auto bg-opacity-50 bg-black p-10 my-0 text-center">
-          <div className="flex text-left mb-5 ml-8">
-            <h1 className="text-4xl">My Top Tracks</h1>
-          </div>
+    <div className="relative w-full mx-auto bg-opacity-50  p-10 my-0 text-center">
+      <div className="flex text-left mb-5 ml-8">
+        <h1 className="text-4xl">My Top Tracks</h1>
+      </div>
       <div className="m-auto overflow-hidden w-[95%]" ref={viewportRef}>
         <div className={`${styles.embla__container}`}>
           {slides?.map((track, index) => (

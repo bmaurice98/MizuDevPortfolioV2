@@ -62,12 +62,10 @@ export default function Music({ props }) {
           </div>
         </div>
       ) : (
-        <div className="">
-          <div className="relative my-auto top-0">
-            <EmblaCarouselTracks slides={props?.topTracks?.items} />
-            <EmblaCarouselArtists slides={props?.topArtists?.items} />
-            <EmblaCarouselRecentTracks slides={props?.recentTracks?.items} />
-          </div>
+        <div className="relative w-full my-auto top-0">
+          <EmblaCarouselTracks slides={props?.topTracks?.items} />
+          <EmblaCarouselArtists slides={props?.topArtists?.items} />
+          <EmblaCarouselRecentTracks slides={props?.recentTracks?.items} />
         </div>
       )}
     </>
