@@ -5,6 +5,7 @@ import styled from "styled-components";
 import BigTitle from "../../components/BigTitle";
 import { HomeButton } from "../../components/HomeButton";
 import { LogoComponent } from "../../components/LogoComponent";
+import ParticleComponent from "../../components/ParticleComponent";
 import Slider from "../../components/Slider";
 import { Socials } from "../../components/Socials";
 import { getPosts } from "../../services";
@@ -83,6 +84,7 @@ const Blog = ({ posts }) => {
         <Socials />
         <BigTitle left="5rem" top="5rem" text="BLOG" />
         <Slider progress={progress} />
+        <ParticleComponent />
         <Center>
           <Grid>
             {posts?.length > 0 ? (

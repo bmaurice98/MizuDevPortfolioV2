@@ -4,9 +4,11 @@ import Image from "next/image";
 import EmblaCarouselTracks from "./EmblaCarousel/EmblaCarouselTopTracks";
 import EmblaCarouselArtists from "./EmblaCarousel/EmblaCarouselTopArtists";
 import EmblaCarouselRecentTracks from "./EmblaCarousel/EmblaCarouselRecentTracks";
+import SlickCarousel from "./SlickCarousel";
 
 export default function Music({ props }) {
   const [trackDisplay, setTrackDisplay] = useState(false);
+  const { topTracks, recentTracks, topArtists } = props;
 
   const fetcher = (url) => fetch(url).then((r) => r.json());
   const { data } = useSWR("/api/spotify", fetcher);
@@ -62,10 +64,11 @@ export default function Music({ props }) {
           </div>
         </div>
       ) : (
-        <div className="relative w-full my-auto top-0">
-          <EmblaCarouselTracks slides={props?.topTracks?.items} />
+        <div className="relative w-screen my-auto">
+          <SlickCarousel tracks={topTracks?.items} />
+          {/* <EmblaCarouselTracks slides={props?.topTracks?.items} />
           <EmblaCarouselArtists slides={props?.topArtists?.items} />
-          <EmblaCarouselRecentTracks slides={props?.recentTracks?.items} />
+          <EmblaCarouselRecentTracks slides={props?.recentTracks?.items} /> */}
         </div>
       )}
     </>
