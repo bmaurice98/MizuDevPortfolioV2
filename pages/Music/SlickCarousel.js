@@ -2,10 +2,8 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
 import Slider from "react-slick";
-import { transform } from "framer-motion";
 
 const SlickCarousel = ({ tracks }) => {
-  const { album, artists, href, id, name, uri, preview_url } = tracks;
   const [imageIndex, setImageIndex] = useState(0);
 
   const NextArrow = ({ onClick }) => {
