@@ -52,6 +52,22 @@ a {
 }
 
 .activeSlide {
-  transform: scale(0.2);
+  transform: scale(1);
   opacity: 1;
+}
+
+.arrow {
+  position: absolute;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.next {
+  right: 0%;
+  top: 50%;
+}
+
+.prev {
+  left: 0%;
+  top: 50%;
 }

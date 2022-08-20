@@ -10,7 +10,7 @@ const SlickCarousel = ({ tracks }) => {
 
   const NextArrow = ({ onClick }) => {
     return (
-      <div onClick={onClick}>
+      <div onClick={onClick} className="arrow next">
         <ArrowRightIcon />
       </div>
     );
@@ -18,28 +18,31 @@ const SlickCarousel = ({ tracks }) => {
 
   const PrevArrow = ({ onClick }) => {
     return (
-      <div onClick={onClick}>
+      <div onClick={onClick} className="arrow prev">
         <ArrowLeftIcon />
       </div>
     );
   };
 
   const settings = {
-    isfinite: true,
+    infinite: true,
     lazyLoad: true,
     speed: 300,
     slidesToShow: 3,
     centerMode: true,
-    centerPadding: true,
+    centerPadding: 0,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     beforeChange: (current, next) => setImageIndex(next),
   };
   return (
-    <div className="w-1/2 m-auto">
+    <div className="relative w-3/4 mt-4">
       <Slider {...settings}>
         {tracks?.map((track, idx) => (
-          <div key={idx === imageIndex ? "slide activeSlide" : "slide"}>
+          <div
+            key={idx}
+            className={idx === imageIndex ? "slide activeSlide" : "slide"}
+          >
             <div className="flex justify-center">
               <Image
                 src={`${track.album.images[0].url}`}

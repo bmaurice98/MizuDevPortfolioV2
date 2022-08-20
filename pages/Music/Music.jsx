@@ -64,8 +64,9 @@ export default function Music({ props }) {
           </div>
         </div>
       ) : (
-        <div className="relative w-screen my-auto">
+        <div className=" w-screen my-auto">
           <SlickCarousel tracks={topTracks?.items} />
+          {/* <SlickCarousel tracks={topArtists?.items} /> */}
           {/* <EmblaCarouselTracks slides={props?.topTracks?.items} />
           <EmblaCarouselArtists slides={props?.topArtists?.items} />
           <EmblaCarouselRecentTracks slides={props?.recentTracks?.items} /> */}
