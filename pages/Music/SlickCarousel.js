@@ -36,7 +36,7 @@ const SlickCarousel = ({ tracks }) => {
     beforeChange: (current, next) => setImageIndex(next),
   };
   return (
-    <div className="relative w-3/4 mt-4">
+    <div className=" w-full p-6 justify-center">
       <Slider {...settings}>
         {tracks?.map((track, idx) => (
           <div
