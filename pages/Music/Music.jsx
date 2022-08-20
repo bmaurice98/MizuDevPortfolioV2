@@ -8,7 +8,7 @@ import SlickCarousel from "./SlickCarousel";
 
 export default function Music({ props }) {
   const [trackDisplay, setTrackDisplay] = useState(false);
-  const { topTracks, recentTracks, topArtists } = props || null;
+  const { topTracks, recentTracks, topArtists } = props || {};
   console.log(props);
 
   const fetcher = (url) => fetch(url).then((r) => r.json());
