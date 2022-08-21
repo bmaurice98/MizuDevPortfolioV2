@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import useSWR from "swr";
 import Image from "next/image";
-import EmblaCarouselTracks from "./EmblaCarousel/EmblaCarouselTopTracks";
-import EmblaCarouselArtists from "./EmblaCarousel/EmblaCarouselTopArtists";
-import EmblaCarouselRecentTracks from "./EmblaCarousel/EmblaCarouselRecentTracks";
-import SlickCarousel from "./SlickCarousel";
+import SlickCarousel from "../../components/SlickCarousel";
+import TopTracks from "./CarouselData/TopTracks";
+import TopArtists from "./CarouselData/TopArtists";
+import RecentTracks from "./CarouselData/RecentTracks";
 
 export default function Music({ props }) {
   const [trackDisplay, setTrackDisplay] = useState(false);
@@ -67,7 +67,15 @@ export default function Music({ props }) {
         </div>
       ) : (
         <div className=" w-screen my-auto">
-          <SlickCarousel tracks={topTracks?.items} />
+          <SlickCarousel>
+            <TopTracks Tracks={topTracks.items} />
+          </SlickCarousel>
+          <SlickCarousel>
+            <TopArtists Artists={topArtists} />
+          </SlickCarousel>
+          <SlickCarousel>
+            <RecentTracks Tracks={recentTracks} />
+          </SlickCarousel>
         </div>
       )}
     </>
