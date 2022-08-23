@@ -3,13 +3,12 @@ import React, { useState } from "react";
 
 const TopTracks = (TopTracks, Index) => {
   const { Tracks } = TopTracks;
-  const [imageIndex, setImageIndex] = useState(Index);
   return (
     <>
       {Tracks?.map((track, idx) => (
         <div
           key={idx}
-          // className={idx === imageIndex ? "slide activeSlide" : "slide"}
+          className={!(idx === Index) ? "slide activeSlide" : "slide"}
         >
           <div className="flex justify-center">
             <Image

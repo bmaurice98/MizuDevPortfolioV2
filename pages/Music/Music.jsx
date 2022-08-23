@@ -9,7 +9,7 @@ import RecentTracks from "./CarouselData/RecentTracks";
 export default function Music({ props }) {
   const [trackDisplay, setTrackDisplay] = useState(false);
   const { topTracks, recentTracks, topArtists } = props || {};
-  console.log(props);
+  const [imageIndex, setImageIndex] = useState(0);
 
   const fetcher = (url) => fetch(url).then((r) => r.json());
   const { data } = useSWR("/api/spotify", fetcher);
@@ -18,6 +18,10 @@ export default function Music({ props }) {
     var min = Math.floor(time / 60000);
     var sec = ((time % 60000) / 1000).toFixed(0);
     return min + ":" + (sec < 10 ? "0" : "") + sec;
+  };
+
+  const changeIndex = (idx) => {
+    setImageIndex(idx);
   };
 
   useEffect(() => {
@@ -67,8 +71,8 @@ export default function Music({ props }) {
         </div>
       ) : (
         <div className=" w-screen my-auto">
-          <SlickCarousel>
-            <TopTracks Tracks={topTracks.items} />
+          <SlickCarousel handleIndex={changeIndex}>
+            <TopTracks Tracks={topTracks.items} Index={imageIndex} />
           </SlickCarousel>
           <SlickCarousel>
             <TopArtists Artists={topArtists} />

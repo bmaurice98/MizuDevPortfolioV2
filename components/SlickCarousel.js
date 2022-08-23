@@ -1,9 +1,9 @@
-import Image from "next/image";
 import React, { useState } from "react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
 import Slider from "react-slick";
 
-const SlickCarousel = ({ imageIndex, setImageIndex }) => {
+const SlickCarousel = (props) => {
+  const { children, handleIndex } = props;
   const NextArrow = ({ onClick }) => {
     return (
       <div onClick={onClick} className="arrow next">
@@ -29,11 +29,11 @@ const SlickCarousel = ({ imageIndex, setImageIndex }) => {
     centerPadding: 0,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-    beforeChange: (current, next) => setImageIndex(next),
+    beforeChange: (current, next) => handleIndex(next),
   };
   return (
     <div className=" w-full p-6 justify-center">
-      <Slider {...settings}></Slider>
+      <Slider {...settings}>{children}</Slider>
     </div>
   );
 };
