@@ -2,14 +2,18 @@ import { useEffect, useState } from "react";
 import useSWR from "swr";
 import Image from "next/image";
 import SlickCarousel from "../../components/SlickCarousel";
-import TopTracks from "./CarouselData/TopTracks";
-import TopArtists from "./CarouselData/TopArtists";
-import RecentTracks from "./CarouselData/RecentTracks";
+import styled from "styled-components";
+
+const nowPlayingContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(1), minmax(0, 1fr);
+  height: 100vh;
+  width: 100vw;
+`;
 
 export default function Music({ props }) {
   const [trackDisplay, setTrackDisplay] = useState(false);
   const { topTracks, recentTracks, topArtists } = props || {};
-  const [imageIndex, setImageIndex] = useState(0);
 
   const fetcher = (url) => fetch(url).then((r) => r.json());
   const { data } = useSWR("/api/spotify", fetcher);
@@ -31,7 +35,7 @@ export default function Music({ props }) {
   return (
     <>
       {trackDisplay ? (
-        <div className="grid grid-cols-1 lg:min-h-[77.7vh] min-h-screen">
+        <div className="grid grid-cols-1 lg:min-h-[77.7vh] min-h-screen w-screen">
           <div className="justify-center items-center text-center mt-16">
             <h1 className="text-4xl dark:text-white text-black">
               Currently listening to
@@ -71,15 +75,13 @@ export default function Music({ props }) {
         </div>
       ) : (
         <div className=" w-screen my-auto">
-          <SlickCarousel handleIndex={changeIndex}>
-            <TopTracks Tracks={topTracks.items} Index={imageIndex} />
-          </SlickCarousel>
-          <SlickCarousel>
+          <SlickCarousel tracks={topTracks?.items}></SlickCarousel>
+          {/* <SlickCarousel>
             <TopArtists Artists={topArtists} />
           </SlickCarousel>
           <SlickCarousel>
             <RecentTracks Tracks={recentTracks} />
-          </SlickCarousel>
+          </SlickCarousel> */}
         </div>
       )}
     </>
