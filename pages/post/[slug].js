@@ -29,10 +29,14 @@ const Container = styled.div`
   border-radius: 0 0 10px 10px;
   color: white;
   display: flex;
-  width: 60vw;
+  width: 70vw;
   margin: auto auto;
   align-items: center;
   padding-top: 5rem;
+
+  @media (max-width: 425px) {
+    width: 90%;
+  }
 `;
 
 const ContainerLower = styled.div`
@@ -43,6 +47,9 @@ const ContainerLower = styled.div`
   margin: 2rem auto;
   align-items: center;
   flex-direction: column;
+  @media (max-width: 425px) {
+    width: 90%;
+  }
 `;
 
 const PostComp = styled.div`
@@ -51,9 +58,16 @@ const PostComp = styled.div`
 
 const BackButton = styled(motion.span)`
   position: fixed;
-  left: 10%;
+  left: 5%;
   top: 50%;
   cursor: pointer;
+  z-index: 3;
+
+  @media (max-width: 425px) {
+    position: sticky;
+    left: 2%;
+    top: 50%;
+  }
 `;
 
 const PostDetails = ({ post }) => {
@@ -66,8 +80,8 @@ const PostDetails = ({ post }) => {
   return (
     <MainContainer>
       <HomeButton pos="absolute" />
-      <LogoComponent />
-      <Socials />
+      <LogoComponent pos="absolute" />
+      <Socials hidden={true} />
       <BackButton whileHover={{ scale: 1.5 }} whileTap={{ scale: 0.8 }}>
         <Link href={"/Blog"}>
           <ArrowLeftIcon className="text-3xl hover:text-Forest_Green" />

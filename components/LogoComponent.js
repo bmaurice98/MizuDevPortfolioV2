@@ -6,7 +6,7 @@ const Logo = styled.h1`
   display: inline-block;
   color: ${(props) => (props.color === "dark" ? darkTheme.text : "#000")};
   font-family: "Pacifico", cursive;
-  position: fixed;
+  position: ${(props) => props.pos};
   left: 2rem;
   top: 2rem;
   font-size: larger;
@@ -18,9 +18,12 @@ const Logo = styled.h1`
   &:hover {
     color: #015249;
   }
-  cursor: pointer;
 `;
 
 export const LogoComponent = (props) => {
-  return <Logo color={props.theme}>BKM</Logo>;
+  return (
+    <Logo color={props.theme} pos={props.pos || "fixed"}>
+      BKM
+    </Logo>
+  );
 };

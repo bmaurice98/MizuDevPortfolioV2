@@ -144,7 +144,7 @@ export default function Music({ props }) {
           </CarouselPicker>
 
           <SlickCarousel tracks={topTracks?.items}></SlickCarousel>
-          <SlickCarousel tracks={topArtists?.items}></SlickCarousel>
+          {/* <SlickCarousel tracks={topArtists?.items}></SlickCarousel> */}
           {/* <SlickCarousel>
             <TopArtists Artists={topArtists} />
           </SlickCarousel>
