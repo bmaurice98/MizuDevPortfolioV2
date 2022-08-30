@@ -24,6 +24,10 @@ const Box = styled(motion.div)`
 
   z-index: 5;
 
+  @media (max-width: 425px) {
+    width: calc(15rem + 25vw);
+  }
+
   &:hover {
     color: #015249;
     background-color: ${(props) => props.theme.text};
@@ -56,9 +60,14 @@ const Title = styled.h3`
 
 const Tags = styled.div`
   padding: 0.5rem 0;
+
+  @media (max-width: 425px) {
+    display: none;
+  }
 `;
 
 const Date = styled.span`
+  display: inherit;
   padding: 0.5rem 0;
 `;
 

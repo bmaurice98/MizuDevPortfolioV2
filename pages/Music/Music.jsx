@@ -18,7 +18,7 @@ const nowPlayingContainer = styled.div`
 
 const CarouselPicker = styled.div`
   width: 100%;
-  margin: auto auto;
+  margin: 10px auto;
 `;
 
 const CarouselTags = styled.ul`
@@ -46,7 +46,7 @@ const CarouselTags = styled.ul`
       }
     }
 
-    &:focus {
+    &:active {
       background-color: #015249;
       color: ${(props) => props.theme.body};
     }
@@ -144,6 +144,7 @@ export default function Music({ props }) {
           </CarouselPicker>
 
           <SlickCarousel tracks={topTracks?.items}></SlickCarousel>
+          <SlickCarousel tracks={topArtists?.items}></SlickCarousel>
           {/* <SlickCarousel>
             <TopArtists Artists={topArtists} />
           </SlickCarousel>

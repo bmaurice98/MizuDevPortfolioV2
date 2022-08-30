@@ -25,6 +25,10 @@ const Icons = styled.div`
   & > *:hover {
     color: #a5a5af;
   }
+
+  @media (max-width: 425px) {
+    display: none;
+  }
 `;
 
 const Line = styled(motion.span)`
