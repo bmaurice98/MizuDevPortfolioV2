@@ -27,7 +27,7 @@ const Icons = styled.div`
   }
 
   @media (max-width: 425px) {
-    display: none;
+    display: ${(props) => (props.hidden === true ? "none" : "flex")};
   }
 `;
 
@@ -43,9 +43,11 @@ const Line = styled(motion.span)`
 let SOCIAL_SIZE = "1.8rem";
 
 export const Socials = (props) => {
+  const { theme, hidden } = props;
+  console.log(hidden);
   return (
     <>
-      <Icons color={props.theme}>
+      <Icons color={theme} hidden={hidden}>
         <motion.a
           initial={{ transform: "scale(0)" }}
           animate={{ scale: [0, 1, 1.3, 1] }}

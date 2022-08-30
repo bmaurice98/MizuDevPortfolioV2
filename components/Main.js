@@ -157,7 +157,7 @@ const Main = () => {
       <Container>
         <HomeButton />
         <LogoComponent theme={click ? "dark" : "light"} />
-        <Socials theme={click ? "dark" : "light"} />
+        <Socials theme={click ? "dark" : "light"} hidden={false} />
         <DarkDiv click={click} />
         <Center click={click}>
           <Spirals width={click ? 120 : 200} onClick={() => handleClick()} />

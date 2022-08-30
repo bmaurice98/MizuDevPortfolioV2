@@ -32,12 +32,32 @@ const Box = styled(motion.div)`
   border-left: 2px solid ${(props) => props.theme.body};
   border-right: 2px solid ${(props) => props.theme.text};
   z-index: 3;
+
+  @media (max-width: 425px) {
+    top: 45%;
+  }
 `;
 
-const SubBox = styled.div`
+const SubBoxLeft = styled.div`
   width: 50%;
   position: relative;
   display: flex;
+
+  @media (max-width: 425px) {
+    text-align: center;
+    width: 100%;
+    background-color: ${(props) => `rgba(${props.theme.bodyRgba},0.1)`};
+  }
+`;
+
+const SubBoxRight = styled.div`
+  width: 50%;
+  position: relative;
+  display: flex;
+
+  @media (max-width: 425px) {
+    display: none;
+  }
 `;
 
 const Text = styled(motion.div)`
@@ -54,16 +74,36 @@ const Text = styled(motion.div)`
     font-size: calc(0.5rem + 1.5vw);
     font-weight: 300;
   }
+
+  @media (max-width: 425px) {
+    font-size: calc(1.5em + 2vw);
+    text-align: center;
+    padding: 1rem;
+    color: #015249;
+    line-height: normal;
+
+    & > *:last-child {
+      color: #015249;
+      font-size: calc(0.5rem + 1.5vw);
+      font-weight: 300;
+    }
+  }
 `;
 
 const Intro = (props) => {
+  const animateStyle = `
+  { height: "55vh";
+  @media (max-width: 425px){
+    height: "35vh"
+  } }
+  `;
   return (
     <Box
       initial={{ height: 0 }}
       animate={{ height: "55vh" }}
       transition={{ type: "spring", duration: 2, delay: 1 }}
     >
-      <SubBox>
+      <SubBoxLeft>
         <Text
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -72,10 +112,10 @@ const Intro = (props) => {
           <h1>Hello,</h1>
           <h3>I&apos;m Brandon</h3>
           <h3>But I also go by Mizu</h3>
-          <h3>I design both clean and functional websites.</h3>
+          <h3>I design both stylish and functional websites.</h3>
         </Text>
-      </SubBox>
-      <SubBox>
+      </SubBoxLeft>
+      <SubBoxRight>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -83,7 +123,7 @@ const Intro = (props) => {
         >
           <Image src={ME} alt="profile Pic" layout="fill" />
         </motion.div>
-      </SubBox>
+      </SubBoxRight>
     </Box>
   );
 };

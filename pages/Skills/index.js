@@ -39,6 +39,15 @@ const Main = styled.div`
     background-color: ${(props) => `rgba(${props.theme.textRgba}, 0.6)`};
     backdrop-filter: blur(3px);
   }
+  @media (max-width: 425px) {
+    display: block;
+    overflow-y: auto;
+    width: calc(15rem + 25vw);
+    height: 50vh;
+    padding: 1rem 2rem;
+    margin-bottom: 10rem;
+    font-size: x-large;
+  }
 `;
 
 const Title = styled.h2`

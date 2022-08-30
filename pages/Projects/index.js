@@ -15,6 +15,9 @@ const MainContainer = styled.div`
   height: 300vh;
   position: relative;
   overflow-x: hidden;
+  @media (max-width: 425px) {
+    height: 314vh;
+  }
 `;
 
 const Center = styled(motion.ul)`
@@ -25,6 +28,10 @@ const Center = styled(motion.ul)`
   top: 12rem;
   left: calc(10rem + 15vw);
   height: 40vh;
+
+  @media (max-width: 425px) {
+    left: 2rem;
+  }
 `;
 
 const container = {

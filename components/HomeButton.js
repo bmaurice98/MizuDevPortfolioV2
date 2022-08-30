@@ -19,6 +19,10 @@ const Button = styled.button`
     background-color: ${({ bg }) => bg};
     color: ${({ color }) => color};
   }
+
+  @media (max-width: 425px) {
+    left: 45%;
+  }
 `;
 
 export const HomeButton = (props) => {

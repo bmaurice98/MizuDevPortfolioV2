@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Resume() {
   return (
-    <div className="relative m-auto bg-Resume w-[50%] py-1 shadow-lg">
+    <div className="relative m-auto bg-Resume md:w-[50%] py-1 shadow-lg w-[95%]">
       <div className="flex flex-col justify-center items-center my-5 mx-8">
         {/* HEADER */}
         <h1 className="text-center  text-5xl font-bold">

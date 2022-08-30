@@ -87,7 +87,7 @@ const Blog = ({ posts }) => {
       <Container ref={ref}>
         <HomeButton pos="fixed" />
         <LogoComponent />
-        <Socials />
+        <Socials hidden={true} />
         <BigTitle left="5rem" top="5rem" text="BLOG" />
         <Slider progress={progress} />
         <ParticleComponent />
