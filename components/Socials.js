@@ -44,7 +44,7 @@ let SOCIAL_SIZE = "1.8rem";
 
 export const Socials = (props) => {
   const { theme, hidden } = props;
-  console.log(hidden);
+
   return (
     <>
       <Icons color={theme} hidden={hidden}>

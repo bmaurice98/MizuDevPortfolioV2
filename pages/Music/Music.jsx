@@ -143,8 +143,9 @@ export default function Music({ props }) {
             </CarouselTags>
           </CarouselPicker>
 
-          <SlickCarousel tracks={topTracks?.items}></SlickCarousel>
-          {/* <SlickCarousel tracks={topArtists?.items}></SlickCarousel> */}
+          <SlickCarousel tracks={topTracks?.items} />
+          {/* <SlickCarousel artists={topArtists?.items} />
+          <SlickCarousel recent={recentTracks?.items} /> */}
           {/* <SlickCarousel>
             <TopArtists Artists={topArtists} />
           </SlickCarousel>
