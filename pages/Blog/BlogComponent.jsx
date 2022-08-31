@@ -68,7 +68,7 @@ const Tags = styled.div`
 
 const Date = styled.span`
   display: inherit;
-  padding: 0.5rem 0;
+  padding: 0 0 0 0;
 `;
 
 const Card = {
