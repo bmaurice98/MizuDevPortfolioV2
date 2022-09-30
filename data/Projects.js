@@ -1,6 +1,15 @@
 export const Projects = [
   {
-    title: "Spotify Discover (Delayed)",
+    title: "Spotify Together",
+    summary: "If there's an aux, anyone can play a song",
+    devices: ["Desktop, Mobile"],
+    tech: ["ReactJS", "NextJS", "MongoDB", "CharkaUI"],
+    description:
+      "There aren't many way to listen along to a friends music through spotify. So I built the app with a goal to allows friends listening to music in the same room or discord, to queue music the current device on the aux.",
+    link: "https://queuemusicboys.vercel.app",
+  },
+  {
+    title: "Spotify Discover",
     summary: "A fast and easy way to discover new music.",
     devices: ["iOS"],
     tech: ["Xcode", "SwiftUI", "Python", "Firebase"],

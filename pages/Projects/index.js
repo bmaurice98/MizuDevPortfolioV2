@@ -12,7 +12,7 @@ import { darkTheme } from "../../components/Themes";
 import { Projects } from "../../data/Projects";
 
 const MainContainer = styled.div`
-  height: 300vh;
+  height: 320vh;
   position: relative;
   overflow-x: hidden;
   @media (max-width: 425px) {

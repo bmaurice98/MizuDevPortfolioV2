@@ -20,12 +20,11 @@ export default function Spotify(props) {
 }
 
 export async function getStaticProps() {
-  const topTracks = await getTopTracks().then((response) => response.data)
-  const topArtists = await getTopArtists().then((response) => response.data)
+  const topTracks = await getTopTracks().then((response) => response.data);
+  const topArtists = await getTopArtists().then((response) => response.data);
   const recentTracks = await getRecent().then((response) => response.data);
 
   return {
     props: { topTracks, recentTracks, topArtists },
-    revalidate: 6000
   };
 }

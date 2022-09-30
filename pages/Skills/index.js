@@ -54,6 +54,7 @@ const Title = styled.h2`
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   font-size: calc(1em + 1vw);
   font-weight: 600;
   ${Main}:hover {
@@ -89,12 +90,12 @@ const SkillsPage = () => {
   return (
     <ThemeProvider theme={lightTheme}>
       <MainContainer>
-        <Link href={"/Resume"}>
+        <Link href={"/Skills/devResume"}>
           <Main>
             <Title>Full Stack Developer</Title>
             <Description>
-              I like to apply my passions to developing products that will leave
-              positive influences on the world.
+              I enjoy being apart of something that will create an impact
+              influence others. My love for technology can make this reality.
             </Description>
             <Description>
               <strong>Languages</strong>
@@ -103,6 +104,22 @@ const SkillsPage = () => {
               <p>ReactJS, NextJS, Tailwind, Prisma, Docker</p>
               <strong>Database</strong>
               <p>MongoDB, Firebase, PostgreSQL</p>
+            </Description>
+          </Main>
+        </Link>
+        <Link href={"/Skills/editorResume"}>
+          <Main>
+            <Title>Video Developing and Graphic Design</Title>
+            <Description>
+              Creating content has always been a passion of mine and I&apos;ve
+              decided it&apos;s time I finally start pursing it further!
+            </Description>
+            <Description>
+              <strong>Softwares</strong>
+              <p>
+                Adobe Premier, After Effects, Illustrator, Photoshop, InDesign,
+                Davinci Resolve, Figma
+              </p>
             </Description>
           </Main>
         </Link>
