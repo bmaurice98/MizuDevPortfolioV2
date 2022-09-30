@@ -47,7 +47,7 @@ const index = () => {
             variant="contained"
             className="bg-Forest_Green hover:bg-Marine text-white rounded-md p-1 my-1"
           >
-            <a download href="/BMEResume.pdf">
+            <a download href="/BMWebResume.pdf">
               Download CV
             </a>
           </button>
@@ -136,7 +136,7 @@ const index = () => {
                   Zwayzy (Musician)
                 </p>
               </div>
-              <div className="flex">
+              <div classcName="flex">
                 <p className="w-[60%] font-semibold text-[16px] text-gray-600">
                   Freelance Editor
                 </p>
@@ -166,7 +166,7 @@ const index = () => {
                 passions as a content creator
               </p>
               <p className="text-sm text-gray-500">
-                &bull; Built using the NextJS framework, chakrUI, styled
+                &bull; Built using the NextJS framework, chakraUI, styled
                 components, and framer motion for user interface display, as
                 well as graphQL for a blog.
               </p>
