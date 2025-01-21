@@ -186,7 +186,7 @@ const Main = () => {
           </a>
         </Contact>
         <Blog>
-          <Link href={"/Blog"}>
+          <Link href={"/Blog"} legacyBehavior={true}>
             <a>
               <motion.h2
                 whileHover={{ scale: 1.3 }}
@@ -206,7 +206,7 @@ const Main = () => {
           </Link>
         </Blog>
         <Projects click={click}>
-          <Link href={"/Projects"} passHref>
+          <Link href={"/Projects"} passHref legacyBehavior={true}>
             <a>
               <motion.h3
                 whileHover={{ scale: 1.3 }}
@@ -227,7 +227,7 @@ const Main = () => {
         </Projects>
         <BottomBar>
           <About click={click}>
-            <Link href={"/About"} passHref>
+            <Link href={"/About"} passHref legacyBehavior={true}>
               <a>
                 <motion.h3
                   initial={{
@@ -247,7 +247,7 @@ const Main = () => {
             </Link>
           </About>
           <Skills>
-            <Link href={"/Skills"} passHref>
+            <Link href={"/Skills"} passHref legacyBehavior={true}>
               <a>
                 <motion.h3
                   initial={{

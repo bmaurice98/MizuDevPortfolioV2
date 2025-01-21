@@ -25,7 +25,7 @@ const Main = styled.div`
   border: 2px solid ${(props) => props.theme.text};
   justify-content: center;
   align-items: center;
-  z-index: 3;
+  z-index: 5;
   line-height: 1.5;
   overflow-y: auto;
   display: flex;
@@ -90,7 +90,7 @@ const SkillsPage = () => {
   return (
     <ThemeProvider theme={lightTheme}>
       <MainContainer>
-        <Link href={"/Skills/devResume"}>
+        <Link href={"/Skills/devResume"} legacyBehavior={true}>
           <Main>
             <Title>Full Stack Developer</Title>
             <Description>
@@ -107,7 +107,7 @@ const SkillsPage = () => {
             </Description>
           </Main>
         </Link>
-        <Link href={"/Skills/editorResume"}>
+        {/* <Link href={"/Skills/editorResume"} legacyBehavior={true}>
           <Main>
             <Title>Video Developing and Graphic Design</Title>
             <Description>
@@ -122,7 +122,7 @@ const SkillsPage = () => {
               </p>
             </Description>
           </Main>
-        </Link>
+        </Link> */}
         <HomeButton theme="light" pos="fixed" />
         <LogoComponent theme="light" />
         <Socials theme="light" />

@@ -47,7 +47,7 @@ const index = () => {
             variant="contained"
             className="bg-Forest_Green hover:bg-Marine text-white rounded-md p-1 my-1"
           >
-            <a download href="/BMResume.pdf">
+            <a download href="/BMResume2.pdf">
               Download CV
             </a>
           </button>
@@ -62,7 +62,7 @@ const index = () => {
               Los Angeles, California
             </h2>
             <h2 className="text-xs text-gray-600 text-center">
-              (+1)917-9**-**** |{" "}
+              (+1)323-2**-**** |{" "}
               <Link
                 href="mailto:Devmizu@gmail.com"
                 target="_blank"
@@ -106,7 +106,7 @@ const index = () => {
             </h2>
             <div className="flex flex-col">
               {/* EDUCATION */}
-              <h2 className="text-3xl text-gray-500 font-semibold my-2">
+              {/* <h2 className="text-3xl text-gray-500 font-semibold my-2">
                 Education
               </h2>
               <div className="w-[100%] h-[0.25px] bg-gray-600"></div>
@@ -125,94 +125,122 @@ const index = () => {
                 </span>
                 Web Design &amp; Implementation, database Systems, Algorithms
                 &amp; Discrete Structures
-              </p>
-              {/* SKILLS */}
+              </p> */}
+              {/* TECHNICAL SKILLS */}
               <h2 className="text-3xl text-gray-500 font-semibold my-2">
-                Skills
+                Technical Skills
               </h2>
               <div className="w-[100%] h-[0.25px] bg-gray-600"></div>
-              <div className="flex md:flex-row flex-col mt-3">
-                <p className="w-[19%] text-lg font-semibold">Languages: </p>
-                <p className="ml-5">
-                  JavaScript, Typescript, HTML, CSS, Python, Solidity
+              <div className="flex md:flex-row flex-col mt-3 w-full text-wrap">
+                <p className="text-lg font-bold">Typescript/JavaScript</p>
+                <p className="ml-2">
+                  3 Years of building and deploying web applications
                 </p>
               </div>
               <div className="flex md:flex-row flex-col">
-                <p className="w-[19%] text-lg font-semibold">Frameworks: </p>
-                <p className="ml-5">
-                  ReactJS, NextJS, Tailwind, Prisma, Docker
+                <p className=" text-lg font-bold">NoSql</p>
+                <p className="ml-2">
+                  Deployed multiple projects utilizing NoSQL Databases
                 </p>
               </div>
               <div className="flex md:flex-row flex-col">
-                <p className="w-[19%] text-lg font-semibold">Database: </p>
-                <p className="ml-5">PostgreSQL, Firebase, MongoDB</p>
+                <p className="text-lg font-bold">Technologies:</p>
+                <p className="ml-2">
+                  ReactJS/NextJS, MongoDB, HTML, CSS/SCSS, ExpressJS, Node,
+                  Docker
+                </p>
               </div>
-              <div className="flex md:flex-row flex-col">
+              {/* <div className="flex md:flex-row flex-col">
                 <p className="w-[19%] text-lg font-semibold">Attributes:</p>
                 <p className="ml-5">
                   Exceptional Communication, Fast Learner, Patience
                 </p>
-              </div>
+              </div> */}
               {/* EXPERIENCE */}
               <h2 className="text-3xl text-gray-500 font-semibold my-2">
-                Experience
+                Professional Experience
               </h2>
               <div className="w-[100%] h-[0.25px] bg-gray-600" />
               <div className="flex">
-                <p className="w-[50%] text-lg font-semibold">Techlab Tutor</p>
+                <p className="w-[50%] text-lg font-semibold">Benduka Arts</p>
                 <p className="w-[50%] text-right font-semibold text-gray-400">
-                  Holland, MI
+                  Los Angeles, CA
                 </p>
               </div>
               <div className="flex">
                 <p className="w-[60%] font-semibold text-[16px] text-gray-600">
-                  Student Assistant - VanWylen Library
+                  Full Stack Developer - Freelance
                 </p>
                 <p className="w-[40%] text-right text-sm font-semibold text-gray-400">
-                  Aug 2016 - Dec 2020
+                  Nov 2022 - Feb 2024
                 </p>
               </div>
               <p className="text-sm text-gray-500">
-                &bull; Guided students and professors through using new updates
-                and software
+                &bull; Worked closely with the client to build a fully featured
+                Art portfolio with a Storefront, Blog, Newsletter, and CMS
+                Administrator Panel using the MERN Stack
               </p>
               <p className="text-sm text-gray-500 ml-5">
-                &bull; Adobe Creative Suite, Office 365, audio mixing software,
-                etc.
+                &bull; Built over 10 Responsive UI Components and forms that
+                cater to all website content
+              </p>
+              <p className="text-sm text-gray-500 ml-5">
+                &bull; Integrated SID’s (Session ID’s) for all new visitors,
+                creating a persistent data flow of returning visitors and unique
+                visitors
+              </p>
+              <p className="text-sm text-gray-500 ml-5">
+                &bull; Created a Built-in Newsletter allowing the client to
+                contact all stored visitor emails in the event of new content
+                releases
               </p>
               <p className="text-sm text-gray-500">
-                &bull; Trained and took lead in workshops for new and current
-                staff on frequently occurring additions to software
+                &bull; Integrated a backend through MongoDB/Mongoose, Stripe,
+                and Cloudinary
+              </p>
+              <p className="text-sm text-gray-500 ml-5">
+                &bull; Developed MongoDB triggers to handle updates across to
+                all products and pricing in a collection
+              </p>
+              <p className="text-sm text-gray-500 ml-5">
+                &bull; Integrated product creation and a payment processing
+                workflow utilizing StripeAPI for an easier optimization of all
+                product pricing, payments, and invoices for the client
+              </p>
+              <p className="text-sm text-gray-500 ml-5">
+                &bull; Leveraged a Cloud service for the storing of all new
+                images
               </p>
               <div className="flex">
-                <p className="w-[50%] text-lg font-semibold">TauSep</p>
+                <p className="w-[50%] text-lg font-semibold">Hotline Media</p>
                 <p className="w-[50%] text-right font-semibold text-gray-400">
-                  Holland, MI (Remote)
+                  Los Angeles, CA
                 </p>
               </div>
               <div className="flex">
                 <p className="w-[60%] font-semibold text-[16px] text-gray-600">
-                  Full Stack Contractor - Freelance
+                  Full Stack Developer - Freelance
                 </p>
                 <p className="w-[40%] text-right text-sm font-semibold text-gray-400">
-                  Dec 2021 - Delayed
+                  Nov 2023 - Nov 2024
                 </p>
               </div>
               <p className="text-sm text-gray-500">
-                &bull; Built a landing page for a Hope College greek life
-                organization
+                &bull; Participated in team meetings hosted by the founders of
+                the company with the goal of determining website features,
+                content, and administrative roles
               </p>
               <p className="text-sm text-gray-500">
-                &bull; Integrated a backend though prisma and PostgreSQL for an
-                account verification system
+                &bull; Built a design plan and began development using Webflow
+                to the request of the client
               </p>
-              <p className="text-sm text-gray-500">
-                &bull; Authenticated accounts receive access to a live social
-                media UI
+              <p className="text-sm text-gray-500 ml-5">
+                &bull; Leveraged Webflow CMS to create a simpler method of
+                creating new content and updating existing content on the site
               </p>
-              <p className="text-sm text-gray-500">
-                &bull; Utilized Compass API to create ease of payment for
-                Organization dues
+              <p className="text-sm text-gray-500 ml-5">
+                &bull; Created custom features and UI components with Javascript
+                and CSS
               </p>
 
               {/* PROJECTS */}
@@ -237,21 +265,25 @@ const index = () => {
               </p>
               <div className="flex">
                 <p className="w-[50%] text-lg font-semibold">
-                  Spotify Discover
+                  SpotifyGroupQueue
                 </p>
                 <p className="w-[50%] text-right text-sm font-semibold text-gray-400">
-                  Oct 2021 - Delayed
+                  Oct 2021 - Dec 2022
                 </p>
               </div>
               <p className="text-sm text-gray-500">
-                &bull; Built a music discovery app using SwiftUI, SpotifyiOS
-                framework, Python, and Spotipy
+                &bull; Built a Spotify Web App to allow multiple users to cater
+                the playlist of a listening party
               </p>
-              <p className="text-sm text-gray-500">
-                &bull; Leveraging the Spotify API to access the Top 10 genres of
-                a user and return a selection of tracks
+              <p className="text-sm text-gray-500 ml-5">
+                &bull; Leveraging the Spotify API to allow users to access or
+                host a listening party
               </p>
-              <div className="flex">
+              <p className="text-sm text-gray-500 ml-5">
+                &bull; Built a backend using MongoDB and NextAuth for storing
+                user data and listening party information
+              </p>
+              {/* <div className="flex">
                 <p className="w-[50%] text-lg font-semibold">Live Chat</p>
                 <p className="w-[50%] text-right text-sm font-semibold text-gray-400">
                   June 2022
@@ -264,15 +296,15 @@ const index = () => {
               <p className="text-sm text-gray-500">
                 &bull; Leveraging MongoDB and ExpressJS to create a database for
                 storing all existing chats and info
-              </p>
+              </p> */}
 
-              {/* INTERESTS */}
+              {/* Education */}
               <h2 className="text-3xl text-gray-500 font-semibold my-2">
                 Interests
               </h2>
               <div className="w-[100%] h-[0.25px] bg-gray-600" />
               <p className="text-center mt-3">
-                Skateboarding | Reading | Streaming | Vlogging | UI | Learning
+                Skateboarding | Streaming | Bouldering | Surfi
               </p>
             </div>
           </div>
