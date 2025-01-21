@@ -6,6 +6,7 @@ import { HomeButton } from "../../components/HomeButton";
 import Link from "next/link";
 import { ArrowLeftIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
+import { Button } from "chakra-ui";
 
 const MainContainer = styled.div`
   width: 100vw;
@@ -43,14 +44,14 @@ const index = () => {
           </Link>
         </BackButton>
         <div className=" hidden md:flex justify-center lg:mt-6 mt-[10rem]">
-          <button
+          <Button
             variant="contained"
             className="bg-Forest_Green hover:bg-Marine text-white rounded-md p-1 my-1"
           >
             <a download href="/BMWebResume.pdf">
               Download CV
             </a>
-          </button>
+          </Button>
         </div>
 
         <div className="relative m-auto bg-Resume md:w-[50%] py-1 shadow-lg w-[95%]">
@@ -136,7 +137,7 @@ const index = () => {
                   Zwayzy (Musician)
                 </p>
               </div>
-              <div classcName="flex">
+              <div className="flex">
                 <p className="w-[60%] font-semibold text-[16px] text-gray-600">
                   Freelance Editor
                 </p>

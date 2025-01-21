@@ -38,6 +38,7 @@ const EmblaCarouselArtists = ({ slides }) => {
               <div className={styles.embla__slide__inner}>
                 <Image
                   src={`${track.images[0].url}`}
+                  alt='song image'
                   layout="fixed"
                   width={200}
                   height={200}
