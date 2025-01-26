@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Head from "next/head";
+
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import BigTitle from "../../components/BigTitle";
@@ -75,7 +75,7 @@ const Blog = ({ posts }) => {
     return () => {
       window.removeEventListener("scroll", updateHeight());
     };
-  }, []);
+  }, [progress]);
 
   return (
     <MainContainer
@@ -91,7 +91,7 @@ const Blog = ({ posts }) => {
         <BigTitle left="5rem" top="5rem" text="BLOG" />
         <Slider progress={progress} />
         <ParticleComponent />
-        <Center>
+        {/* <Center>
           <Grid>
             {posts?.length > 0 ? (
               posts.map((post) => (
@@ -103,7 +103,7 @@ const Blog = ({ posts }) => {
               <h2>No Posts created as of yet</h2>
             )}
           </Grid>
-        </Center>
+        </Center> */}
       </Container>
     </MainContainer>
   );
@@ -111,11 +111,11 @@ const Blog = ({ posts }) => {
 
 export default Blog;
 
-export async function getStaticProps() {
-  const posts = (await getPosts()) || null;
+// export async function getStaticProps() {
+//   const posts = (await getPosts()) || null;
 
-  return {
-    props: { posts },
-    revalidate: 6000,
-  };
-}
+//   return {
+//     props: { posts },
+//     revalidate: 6000,
+//   };
+// }

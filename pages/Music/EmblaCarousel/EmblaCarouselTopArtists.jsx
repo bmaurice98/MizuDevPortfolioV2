@@ -1,8 +1,8 @@
-import React from 'react';
-import { useState, useEffect, useCallback } from 'react';
-import Image from 'next/image'
+import React from "react";
+import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
-import styles from './Embla.module.css'
+import styles from "./Embla.module.css";
 
 const EmblaCarouselArtists = ({ slides }) => {
   const [viewportRef, embla] = useEmblaCarousel({
@@ -28,9 +28,9 @@ const EmblaCarouselArtists = ({ slides }) => {
 
   return (
     <div className="relative mx-auto bg-opacity-50 bg-black p-10 my-0 text-center">
-          <div className="flex text-left mb-5 ml-8">
-            <h1 className="text-4xl">My Top Artists</h1>
-          </div>
+      <div className="flex text-left mb-5 ml-8">
+        <h1 className="text-4xl">My Top Artists</h1>
+      </div>
       <div className="m-auto overflow-hidden w-[95%]" ref={viewportRef}>
         <div className={`${styles.embla__container}`}>
           {slides?.map((track, index) => (
@@ -38,17 +38,14 @@ const EmblaCarouselArtists = ({ slides }) => {
               <div className={styles.embla__slide__inner}>
                 <Image
                   src={`${track.images[0].url}`}
-                  alt='song image'
-                  layout="fixed"
+                  alt={`${track.name}`}
                   width={200}
                   height={200}
                   className={styles.embla__slide__image}
                 />
                 <div className="sticky flex-col w-auto -translate-y-20">
                   <p className="relative text-center text-2xl">{track.name}</p>
-                  <p className="relative text-center ">
-                    {track.genres[0]}
-                  </p>
+                  <p className="relative text-center ">{track.genres[0]}</p>
                 </div>
               </div>
             </div>

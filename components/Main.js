@@ -185,85 +185,77 @@ const Main = () => {
             </motion.h3>
           </a>
         </Contact>
-        <Blog>
-          <Link href={"/Blog"} legacyBehavior={true}>
-            <a>
-              <motion.h2
-                whileHover={{ scale: 1.3 }}
-                whileTap={{ scale: 0.8 }}
-                initial={{
-                  y: -200,
-                  transition: { type: "spring", duration: 1.5, delay: 1 },
-                }}
-                animate={{
-                  y: 0,
-                  transition: { type: "spring", duration: 1.5, delay: 1 },
-                }}
-              >
-                Blog
-              </motion.h2>
-            </a>
+        {/* <Blog>
+          <Link href={"/Blog"}>
+            <motion.h2
+              whileHover={{ scale: 1.3 }}
+              whileTap={{ scale: 0.8 }}
+              initial={{
+                y: -200,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              animate={{
+                y: 0,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+            >
+              Blog
+            </motion.h2>
           </Link>
-        </Blog>
+        </Blog> */}
         <Projects click={click}>
-          <Link href={"/Projects"} passHref legacyBehavior={true}>
-            <a>
-              <motion.h3
-                whileHover={{ scale: 1.3 }}
-                whileTap={{ scale: 0.8 }}
-                initial={{
-                  y: -200,
-                  transition: { type: "spring", duration: 1.5, delay: 1 },
-                }}
-                animate={{
-                  y: 0,
-                  transition: { type: "spring", duration: 1.5, delay: 1 },
-                }}
-              >
-                Projects
-              </motion.h3>
-            </a>
+          <Link href={"/Projects"} passHref>
+            <motion.h3
+              whileHover={{ scale: 1.3 }}
+              whileTap={{ scale: 0.8 }}
+              initial={{
+                y: -200,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              animate={{
+                y: 0,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+            >
+              Projects
+            </motion.h3>
           </Link>
         </Projects>
         <BottomBar>
           <About click={click}>
-            <Link href={"/About"} passHref legacyBehavior={true}>
-              <a>
-                <motion.h3
-                  initial={{
-                    y: 200,
-                    transition: { type: "spring", duration: 1.5, delay: 1 },
-                  }}
-                  animate={{
-                    y: 0,
-                    transition: { type: "spring", duration: 1.5, delay: 1 },
-                  }}
-                  whileHover={{ scale: 1.3 }}
-                  whileTap={{ scale: 0.8 }}
-                >
-                  About
-                </motion.h3>
-              </a>
+            <Link href={"/About"} passHref>
+              <motion.h3
+                initial={{
+                  y: 200,
+                  transition: { type: "spring", duration: 1.5, delay: 1 },
+                }}
+                animate={{
+                  y: 0,
+                  transition: { type: "spring", duration: 1.5, delay: 1 },
+                }}
+                whileHover={{ scale: 1.3 }}
+                whileTap={{ scale: 0.8 }}
+              >
+                About
+              </motion.h3>
             </Link>
           </About>
           <Skills>
-            <Link href={"/Skills"} passHref legacyBehavior={true}>
-              <a>
-                <motion.h3
-                  initial={{
-                    y: 200,
-                    transition: { type: "spring", duration: 1.5, delay: 1 },
-                  }}
-                  animate={{
-                    y: 0,
-                    transition: { type: "spring", duration: 1.5, delay: 1 },
-                  }}
-                  whileHover={{ scale: 1.3 }}
-                  whileTap={{ scale: 0.8 }}
-                >
-                  Skills
-                </motion.h3>
-              </a>
+            <Link href={"/Skills"} passHref>
+              <motion.h3
+                initial={{
+                  y: 200,
+                  transition: { type: "spring", duration: 1.5, delay: 1 },
+                }}
+                animate={{
+                  y: 0,
+                  transition: { type: "spring", duration: 1.5, delay: 1 },
+                }}
+                whileHover={{ scale: 1.3 }}
+                whileTap={{ scale: 0.8 }}
+              >
+                Skills
+              </motion.h3>
             </Link>
           </Skills>
         </BottomBar>

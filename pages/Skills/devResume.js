@@ -4,9 +4,8 @@ import Head from "next/head";
 import styled from "styled-components";
 import { HomeButton } from "../../components/HomeButton";
 import Link from "next/link";
-import { ArrowLeftIcon } from "@chakra-ui/icons";
+// import { ArrowLeftIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
-import { Button } from "chakra-ui";
 
 const MainContainer = styled.div`
   width: 100vw;
@@ -39,19 +38,19 @@ const index = () => {
       <MainContainer>
         <HomeButton pos="absolute" />
         <BackButton whileHover={{ scale: 1.5 }} whileTap={{ scale: 0.8 }}>
-          <Link href={"/Skills"}>
+          {/* <Link href={"/Skills"}>
             <ArrowLeftIcon className="text-3xl hover:text-Forest_Green" />
-          </Link>
+          </Link> */}
         </BackButton>
         <div className=" hidden md:flex justify-center lg:mt-6 mt-[10rem]">
-          <Button
-            variant="contained"
+          <button
+            // variant="contained"
             className="bg-Forest_Green hover:bg-Marine text-white rounded-md p-1 my-1"
           >
             <a download href="/BMResume2.pdf">
               Download CV
             </a>
-          </Button>
+          </button>
         </div>
         <div className="relative m-auto bg-Resume md:w-[50%] py-1 shadow-lg w-[95%]">
           <div className="flex flex-col justify-center items-center my-5 mx-8">

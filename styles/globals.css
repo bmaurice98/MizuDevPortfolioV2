@@ -1,11 +1,12 @@
+/* @import tailwindcss/Preflight */
 @tailwind base; /* Preflight will be injected here */
-
-@tailwind components;
 
 @tailwind utilities;
 
-@import "slick-carousel/slick/slick.css";
-@import "slick-carousel/slick/slick-theme.css";
+@tailwind utilities;
+
+/* @import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css"; */
 
 html,
 body {

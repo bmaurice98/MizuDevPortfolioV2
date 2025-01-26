@@ -1,6 +1,6 @@
 import React from "react";
 import { useRouter } from "next/dist/client/router";
-import { getPosts, getPostDetails } from "../../services";
+// import { getPosts, getPostDetails } from "../../services";
 import PostDetail from "../Blog/PostDetail";
 import Author from "../Blog/Author";
 import Comments from "../Blog/Comments";
@@ -88,14 +88,12 @@ const PostDetails = ({ post }) => {
         </Link>
       </BackButton>
       <Container>
-        <PostComp>
-          <PostDetail post={post} />
-        </PostComp>
+        <PostComp>{/* <PostDetail post={post} /> */}</PostComp>
       </Container>
       <ContainerLower>
-        <Author author={post.author} />
+        {/* <Author author={post.author} />
         <CommentsForm slug={post.slug} />
-        <Comments slug={post.slug} />
+        <Comments slug={post.slug} /> */}
       </ContainerLower>
       {/* <div className="cols-span-1 lg:col-span-4">
           <div className="relative lg:sticky top-14">
@@ -112,18 +110,18 @@ const PostDetails = ({ post }) => {
 
 export default PostDetails;
 
-export async function getStaticProps({ params }) {
-  const data = await getPostDetails(params.slug);
-  return {
-    props: { post: data },
-  };
-}
+// export async function getStaticProps({ params }) {
+//   const data = await getPostDetails(params.slug);
+//   return {
+//     props: { post: data },
+//   };
+// }
 
-export async function getStaticPaths() {
-  const posts = await getPosts();
+// export async function getStaticPaths() {
+//   const posts = await getPosts();
 
-  return {
-    paths: posts.map(({ node: { slug } }) => ({ params: { slug } })),
-    fallback: true,
-  };
-}
+//   return {
+//     paths: posts.map(({ node: { slug } }) => ({ params: { slug } })),
+//     fallback: true,
+//   };
+// }

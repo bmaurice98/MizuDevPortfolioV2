@@ -1,6 +1,7 @@
 import React from "react";
 import moment from "moment";
 import styled from "styled-components";
+import Image from "next/image";
 
 const PostImage = styled.img`
   box-shadow: 0 4px 15px 0px ${(props) => `rgba(${props.theme.textRgba}, 0.25)`},
@@ -72,7 +73,7 @@ const PostDetail = ({ post }) => {
         );
       case "image":
         return (
-          <img
+          <Image
             key={index}
             alt={obj.title}
             height={obj.height}

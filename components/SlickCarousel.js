@@ -112,7 +112,7 @@ const SlickCarousel = (props) => {
     beforeChange: (current, next) => setImageIndex(next),
   };
 
-  console.log(props);
+  // console.log(props);
   return (
     <div className="w-full h-full my-auto p-6 justify-center">
       <Slider {...settings}>

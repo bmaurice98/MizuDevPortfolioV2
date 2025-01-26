@@ -2,7 +2,7 @@ import moment from "moment";
 import React, { useState, useEffect } from "react";
 import parse from "html-react-parser";
 
-import { getComments } from "../../services";
+// import { getComments } from "../../services";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -21,7 +21,7 @@ const Comments = ({ slug }) => {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    getComments(slug).then((result) => setComments(result));
+    // getComments(slug).then((result) => setComments(result));
   }, [slug]);
 
   return (
