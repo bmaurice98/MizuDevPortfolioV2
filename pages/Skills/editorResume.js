@@ -1,9 +1,10 @@
 import Head from "next/head";
 
 import styled from "styled-components";
-import { HomeButton } from "../../../MizuPortfolioV2/components/HomeButton";
-import Link from "../../../MizuPortfolioV2/node_modules/next/link";
-import { motion } from "../../../MizuPortfolioV2/node_modules/framer-motion";
+import { HomeButton } from "../../components/HomeButton";
+import Link from "next/link";
+import { motion, useSpring } from "framer-motion";
+
 // import { ArrowLeftIcon } from "@chakra-ui/icons";
 
 const MainContainer = styled.div`
