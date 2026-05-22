@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Resume() {
   return (
-    <div className="relative m-auto bg-Resume md:w-[50%] py-1 shadow-lg w-[95%]">
+    <div className="m-auto bg-[#fffee] md:w-[50%] py-1 shadow-lg w-[95%]">
       <div className="flex flex-col justify-center items-center my-5 mx-8">
         {/* HEADER */}
         <h1 className="text-center  text-5xl font-bold">
@@ -19,7 +19,7 @@ export default function Resume() {
             passHref
           >
             <span className="hover:underline cursor-pointer">
-              DevMizu@gmail.com
+              Devmizu@gmail.com
             </span>
           </Link>{" "}
           |{" "}

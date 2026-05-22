@@ -23,8 +23,8 @@ const Error = () => {
         <h2>This page cannot be found</h2>
         <p>
           Return{" "}
-          <Link href="/">
-            <a className="text-blue-400 underline">Home</a>
+          <Link href="/" className="text-blue-400 underline">
+            Home
           </Link>
         </p>
       </div>
